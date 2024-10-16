@@ -5,4 +5,8 @@
     <string name="home">Home</string>
     <string name="contacts">Contacts</string>
     <string name="account">Account</string>
+
+    <string name="welcome">Welcome to DogHub!</string>
+    <string name="sub_message">Dog-Hub is your go-to companion for everything you need to care for your dog</string>
+    <string name="start">Get Started!</string>
 </resources>
