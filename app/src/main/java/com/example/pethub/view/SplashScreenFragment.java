@@ -22,7 +22,7 @@ public class SplashScreenFragment extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_splash_screen);
 
-        // Set padding for insets (this is optional if you need to handle system insets)
+        // Set padding for insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.splash_image), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -35,8 +35,8 @@ public class SplashScreenFragment extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(SplashScreenFragment.this, MainActivity.class);
                 startActivity(intent);
-                finish();  // Finish SplashScreenActivity so that it's removed from the back stack
+                finish();
             }
-        }, 1000); // 1-second delay
+        }, 1000);
     }
 }

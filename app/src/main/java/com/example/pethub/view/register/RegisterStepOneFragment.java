@@ -1,14 +1,20 @@
 package com.example.pethub.view.register;
 
+import static com.example.pethub.R.*;
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pethub.R;
+import com.google.android.material.button.MaterialButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,25 @@ public class RegisterStepOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register_step_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_register_step_one, container, false);
+
+        // Find the Next button
+        MaterialButton nextButton = view.findViewById(R.id.next_button);
+
+        // Set click listener for Next button
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to RegisterStepTwoFragment
+                FragmentManager fragmentManager = getParentFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, new RegisterStepTwoFragment()) // fragment_container is the ID of the container where fragments are displayed
+                        .addToBackStack(null) // Optional: Adds this transaction to the back stack so the user can navigate back
+                        .commit();
+            }
+        });
+
+        return view;
     }
+
 }

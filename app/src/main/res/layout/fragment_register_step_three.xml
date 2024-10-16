@@ -18,7 +18,7 @@
             android:fontFamily="@font/roboto_black"
             android:text="Vaccination History"
             android:textColor="@color/text_dark_color"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,10 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20dp"
-            android:text="Latest Vaccination Date"
-            android:textSize="16sp"
-            android:textColor="@color/text_dark_color"
             android:fontFamily="@font/roboto_medium"
+            android:text="Latest Vaccination Date"
+            android:textColor="@color/text_dark_color"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -64,8 +64,8 @@
                 android:hint="Enter Latest Vaccination Date"
                 android:inputType="phone"
                 android:lines="1"
-                android:maxLines="1"
                 android:maxLength="11"
+                android:maxLines="1"
                 android:scrollbars="horizontal"
                 android:singleLine="true"
                 app:boxStrokeWidth="1dp"
@@ -73,17 +73,15 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/firstNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Next Due Date of Vaccination"
-            android:textSize="16sp"
-            android:textColor="@color/text_dark_color"
             android:fontFamily="@font/roboto_medium"
+            android:text="Next Due Date of Vaccination"
+            android:textColor="@color/text_dark_color"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ContactNumber" />
 
@@ -113,10 +111,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Vet Clinic"
-            android:textSize="16sp"
-            android:textColor="@color/text_dark_color"
             android:fontFamily="@font/roboto_medium"
+            android:text="Vet Clinic"
+            android:textColor="@color/text_dark_color"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/municipality" />
 
@@ -133,15 +131,65 @@
 
             <AutoCompleteTextView
                 android:id="@+id/tvBrgy"
-                android:inputType="text"
-                android:layout_height="56dp"
                 android:layout_width="match_parent"
+                android:layout_height="56dp"
                 android:hint="Enter your dog's Vet Clinic"
+                android:inputType="text"
                 android:padding="16dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Button layout anchored to the bottom -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="275dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/brgy_type_input_layout">
 
+            <Button
+                android:id="@+id/previousButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="@color/primary_main_color"
+                android:drawableLeft="@drawable/ic_previous_button"
+                android:paddingLeft="15dp"
+                android:paddingTop="13dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="13dp"
+                android:text="Previous"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:backgroundTint="@color/primary_main_color"
+                android:drawableEnd="@drawable/ic_next_button"
+                android:paddingLeft="35dp"
+                android:paddingTop="13dp"
+                android:paddingRight="35dp"
+                android:paddingBottom="13dp"
+                android:text="Next"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

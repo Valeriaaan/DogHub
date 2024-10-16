@@ -197,7 +197,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/breedTextView"
             android:layout_width="wrap_content"
@@ -237,6 +236,26 @@
                 app:boxStrokeWidthFocused="2dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:backgroundTint="@color/primary_main_color"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="290dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="13dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="13dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/ic_next_button"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
