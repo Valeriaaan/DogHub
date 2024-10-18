@@ -28,7 +28,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:background="#F8F5F0"
-
             android:paddingVertical="16dp"
             android:padding="@dimen/dimen_16dp">
 
@@ -40,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="Doug"
                 android:textSize="24sp"
-                android:textColor="@color/text_dark_color"
+                android:textColor="@color/primary_main_color"
                 android:fontFamily="@font/roboto_bold" />
 
             <TextView

@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="Paws and Claws Veterinary Clinic"
                 android:textSize="@dimen/dimen_16sp"
-                android:textColor="@color/text_dark_color"
+                android:textColor="@color/primary_main_color"
                 android:fontFamily="@font/roboto_bold" />
 
             <TextView

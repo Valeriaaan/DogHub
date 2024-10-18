@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_black"
                 android:text="Heath Concerns"
-                android:textColor="@color/text_dark_color"
+                android:textColor="@color/primary_main_color"
                 android:textSize="24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:text="Health concern"
                 android:textSize="16sp"
-                android:textColor="@color/text_dark_color"
+                android:textColor="@color/primary_main_color"
                 android:fontFamily="@font/roboto_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
