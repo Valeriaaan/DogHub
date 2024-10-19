@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecommendedDietByAge">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diet By Age"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:paddingBottom="16dp"/>
+
+            <!-- Puppies Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Puppies:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High-protein puppy food to support growth."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Example Foods:"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Royal Canin Puppy\n- Hill’s Science Diet Puppy\n- Blue Buffalo Life Protection Puppy"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feed 3-4 times a day."
+                android:paddingBottom="16dp"/>
+
+            <!-- Adults Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adults:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balanced diet with protein, fats, and carbohydrates."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Example Foods:"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Purina Pro Plan Adult\n- Taste of the Wild Adult\n- Wellness CORE Grain-Free Adult"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feed 2 times a day."
+                android:paddingBottom="16dp"/>
+
+            <!-- Seniors Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seniors:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low-calorie, easy-to-digest food for weight management and joint health."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Example Foods:"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Hill’s Science Diet Senior\n- Blue Buffalo Life Protection Senior\n- Nutro Ultra Senior"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feed 1-2 times a day."
+                android:paddingBottom="16dp"/>
+
+            <!-- Portion Sizes Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portion Sizes"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:paddingBottom="16dp"/>
+
+            <!-- Portion Size for Puppies -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Puppies:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small, frequent meals based on weight and breed size (e.g., ½ to 1 cup per meal)."
+                android:paddingBottom="16dp"/>
+
+            <!-- Portion Size for Adults -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adults:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1-2 cups per meal for medium dogs (adjust for breed and activity)."
+                android:paddingBottom="16dp"/>
+
+            <!-- Portion Size for Seniors -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seniors:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smaller portions (½ to 1 cup) to prevent overfeeding."
+                android:paddingBottom="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

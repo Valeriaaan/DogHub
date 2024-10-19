@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TreatsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Title: Treats -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Treats"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:paddingBottom="16dp"/>
+
+            <!-- Healthy Treat Options Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Healthy Treat Options:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Carrot Sticks\n- Small Apple Slices (without seeds)\n- Blue Buffalo Wilderness Trail Treats\n- Zuke’s Mini Naturals (low-calorie, training treats)"
+                android:paddingBottom="16dp"/>
+
+            <!-- Recipe Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Healthy Homemade Treat Recipes:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Peanut Butter and Pumpkin Biscuits: Made from natural ingredients."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Frozen Yogurt Treats: Blend yogurt with dog-safe fruits like bananas and freeze them into bite-sized treats."
+                android:paddingBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="These add variety and give owners the ability to create special snacks for their dogs."
+                android:paddingBottom="16dp"/>
+
+            <!-- Guidelines Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guidelines:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Treats should only make up 10% of daily caloric intake."
+                android:paddingBottom="16dp"/>
+
+            <!-- Caloric Needs by Size Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Caloric Needs by Size:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small Breeds (< 20 lbs): 400-600 kcal per day."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Breeds (20-50 lbs): 800-1,200 kcal per day."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large Breeds (> 50 lbs): 1,200-2,000 kcal per day."
+                android:paddingBottom="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
