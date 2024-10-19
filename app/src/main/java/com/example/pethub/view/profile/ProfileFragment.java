@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView; // Make sure to import ImageView
+import android.widget.ImageView;
 import com.example.pethub.R;
-import com.example.pethub.view.home.HomeFragment; // Import HomeFragment
-import com.example.pethub.view.contacts.ContactsFragment; // Import ContactsFragment
+import com.example.pethub.view.home.HomeFragment;
+import com.example.pethub.view.contacts.ContactsFragment;
 
 public class ProfileFragment extends Fragment {
 
@@ -24,29 +24,23 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Find the home ImageView and set the click listener
-        ImageView navHome = view.findViewById(R.id.navHome); // Ensure this ID matches your layout
-        navHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with HomeFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new HomeFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        ImageView navHome = view.findViewById(R.id.navHome);
+        navHome.setOnClickListener(v -> {
+            // Replace current Fragment with HomeFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new HomeFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the contacts ImageView and set the click listener
         ImageView navContacts = view.findViewById(R.id.navContacts);
-        navContacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with ContactsFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new ContactsFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        navContacts.setOnClickListener(v -> {
+            // Replace current Fragment with ContactsFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new ContactsFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         return view;

@@ -25,28 +25,22 @@ public class ContactsFragment extends Fragment {
 
         // Find the home ImageView and set the click listener
         ImageView navHome = view.findViewById(R.id.navHome);
-        navHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with HomeFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new HomeFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        navHome.setOnClickListener(v -> {
+            // Replace current Fragment with HomeFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new HomeFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the profile ImageView and set the click listener
         ImageView navProfile = view.findViewById(R.id.navProfile);
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with ProfileFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();;
-                transaction.replace(R.id.fragment_container, new ProfileFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        navProfile.setOnClickListener(v -> {
+            // Replace current Fragment with ProfileFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new ProfileFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         return view;

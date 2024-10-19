@@ -92,6 +92,7 @@
                 android:id="@+id/navHome"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="?attr/selectableItemBackground"
                 android:contentDescription="Home"
                 android:src="@drawable/ic_home" />
 
@@ -115,6 +116,7 @@
                 android:id="@+id/navContacts"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="?attr/selectableItemBackground"
                 android:contentDescription="Contacts"
                 android:src="@drawable/ic_contacts" />
 
@@ -137,6 +139,7 @@
                 android:id="@+id/navProfile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="?attr/selectableItemBackground"
                 android:contentDescription="Profile"
                 android:src="@drawable/ic_profile" />
 

@@ -26,67 +26,70 @@ public class HomeFragment extends Fragment {
 
         // Find the Nutrition CardView and set the click listener
         CardView cardNutrition = view.findViewById(R.id.cardNutrition);
-        cardNutrition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with NutritionPageFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new NutritionPageFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        cardNutrition.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
+            // Replace current Fragment with NutritionPageFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new NutritionPageFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the Health CardView and set the click listener
         CardView cardHealth = view.findViewById(R.id.cardHealth);
-        cardHealth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with HealthPageFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new HealthPageFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        cardHealth.setOnClickListener(v -> {
+            v.setAlpha(0.5f);
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
+            // Replace current Fragment with HealthPageFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new HealthPageFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the Exercise CardView and set the click listener
         CardView cardExercise = view.findViewById(R.id.cardExercise);
-        cardExercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with ExercisePageFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new ExercisePageFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        cardExercise.setOnClickListener(v -> {
+            v.setAlpha(0.5f);
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
+            // Replace current Fragment with ExercisePageFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new ExercisePageFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the contacts ImageView and set the click listener
         ImageView navContacts = view.findViewById(R.id.navContacts);
-        navContacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with ContactsFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new ContactsFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        navContacts.setOnClickListener(v -> {
+            v.setAlpha(0.5f);
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
+            // Replace current Fragment with ContactsFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new ContactsFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         // Find the profile ImageView and set the click listener
         ImageView navProfile = view.findViewById(R.id.navProfile);
-        navProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Replace current Fragment with ProfileFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, new ProfileFragment());
-                transaction.addToBackStack(null); // Optional: add to back stack
-                transaction.commit();
-            }
+        navProfile.setOnClickListener(v -> {
+            v.setAlpha(0.5f);
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
+            // Replace current Fragment with ProfileFragment
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, new ProfileFragment());
+            transaction.addToBackStack(null); // Optional: add to back stack
+            transaction.commit();
         });
 
         return view;
