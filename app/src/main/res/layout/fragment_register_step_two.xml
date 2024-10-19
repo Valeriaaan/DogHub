@@ -93,7 +93,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="16dp"
-        android:padding="30dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -112,7 +112,7 @@
             android:drawableLeft="@drawable/ic_previous_button"
             android:backgroundTint="@color/primary_main_color"
             android:textColor="@android:color/white"
-            android:layout_marginEnd="30dp" />
+            android:layout_marginRight="60dp" />
 
         <Button
             android:id="@+id/nextButton"
@@ -128,7 +128,7 @@
             android:drawableEnd="@drawable/ic_next_button"
             android:backgroundTint="@color/primary_main_color"
             android:textColor="@android:color/white"
-            android:layout_marginStart="30dp" />
+            android:layout_marginLeft="60dp" />
 
     </LinearLayout>
 

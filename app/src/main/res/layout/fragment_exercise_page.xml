@@ -1,315 +1,407 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_color"
-    tools:context=".view.home.ExercisePageFragment">
+    tools:context=".view.home.NutritionPageFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@id/navBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/top_bar_dimen"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <!-- App Bar Layout -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="@dimen/dimen_30dp"
-                android:background="@color/primary_main_color"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                android:layout_height="@dimen/top_bar_dimen"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_main_color"
+                    android:paddingTop="@dimen/dimen_30dp"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Dog's name Exercise"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!--RECOMMENDED DIET BY AGE-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExerciseAgeCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="5.5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Dog's name Exercise"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/white"
-                    android:textSize="22sp" />
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:id="@+id/ExerciseAgeIcon"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_image_placeholder" />
 
-            </androidx.appcompat.widget.Toolbar>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingVertical="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dimen_16dp">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                        <TextView
+                            android:id="@+id/ExerciseAgeTextView"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exercise Age"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary_main_color"
+                            android:fontFamily="@font/roboto_bold" />
 
-        <!--RECOMMENDED DIET BY AGE-->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ExerciseAgeCardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_marginHorizontal="@dimen/dimen_16dp"
-            android:layout_marginBottom="5.5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ExerciseAgeIcon"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/img_image_placeholder" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="16dp"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/dimen_16dp">
-
-                    <TextView
-                        android:id="@+id/ExerciseAgeTextView"
-                        android:maxLines="2"
-                        android:ellipsize="end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Exercise Age"
-                        android:textSize="18sp"
-                        android:textColor="@color/primary_main_color"
-                        android:fontFamily="@font/roboto_bold" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <!--PORTION SIZE-->
 
-        <!--PORTION SIZE-->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ExerciseBreedCardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_marginHorizontal="@dimen/dimen_16dp"
-            android:layout_marginBottom="5.5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ExerciseAgeCardView">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ExerciseBreedCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ExerciseBreedIcon"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/img_image_placeholder" />
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="5.5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ExerciseAgeCardView">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="16dp"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/dimen_16dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/ExerciseBreedTextView"
-                        android:maxLines="2"
-                        android:ellipsize="end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Exercise Breed"
-                        android:textSize="18sp"
-                        android:textColor="@color/primary_main_color"
-                        android:fontFamily="@font/roboto_bold" />
+                    <ImageView
+                        android:id="@+id/ExerciseBreedIcon"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_image_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingVertical="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dimen_16dp">
+
+                        <TextView
+                            android:id="@+id/ExerciseBreedTextView"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exercise Breed"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary_main_color"
+                            android:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <!--TYPES OF DOG FOOD-->
 
-        <!--TYPES OF DOG FOOD-->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/TypesExerciseCardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_marginHorizontal="@dimen/dimen_16dp"
-            android:layout_marginBottom="5.5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ExerciseBreedCardView">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/TypesExerciseCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/TypesExerciseIcon"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/img_image_placeholder" />
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="5.5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ExerciseBreedCardView">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="16dp"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/dimen_16dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/TypesExerciseTextView"
-                        android:maxLines="2"
-                        android:ellipsize="end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Types of Exercise"
-                        android:textSize="18sp"
-                        android:textColor="@color/primary_main_color"
-                        android:fontFamily="@font/roboto_bold" />
+                    <ImageView
+                        android:id="@+id/TypesExerciseIcon"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_image_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingVertical="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dimen_16dp">
+
+                        <TextView
+                            android:id="@+id/TypesExerciseTextView"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Types of Exercise"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary_main_color"
+                            android:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <!--FOODS TO AVOID-->
+            <!--FOODS TO AVOID-->
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/IndoorExerciseCardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_marginHorizontal="@dimen/dimen_16dp"
-            android:layout_marginBottom="5.5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TypesExerciseCardView">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/IndoorExerciseCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/IndoorExerciseIcon"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/img_image_placeholder" />
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="5.5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TypesExerciseCardView">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="16dp"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/dimen_16dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/IndoorExerciseTextView"
-                        android:maxLines="2"
-                        android:ellipsize="end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Indoor Exercise"
-                        android:textSize="18sp"
-                        android:textColor="@color/primary_main_color"
-                        android:fontFamily="@font/roboto_bold" />
+                    <ImageView
+                        android:id="@+id/IndoorExerciseIcon"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_image_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingVertical="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dimen_16dp">
+
+                        <TextView
+                            android:id="@+id/IndoorExerciseTextView"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Indoor Exercise"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary_main_color"
+                            android:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <!--TREATS-->
+            <!--TREATS-->
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/LittleExerciseCardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20dp"
-            android:layout_marginHorizontal="@dimen/dimen_16dp"
-            android:layout_marginBottom="5.5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IndoorExerciseCardView">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/LittleExerciseCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/LittleExerciseIcon"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/img_image_placeholder" />
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginHorizontal="@dimen/dimen_16dp"
+                android:layout_marginBottom="5.5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IndoorExerciseCardView">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingVertical="16dp"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/dimen_16dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/LittleExerciseTextView"
-                        android:maxLines="2"
-                        android:ellipsize="end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sign's of too little or too much Exercise"
-                        android:textSize="18sp"
-                        android:textColor="@color/primary_main_color"
-                        android:fontFamily="@font/roboto_bold" />
+                    <ImageView
+                        android:id="@+id/LittleExerciseIcon"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/img_image_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingVertical="16dp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/dimen_16dp">
+
+                        <TextView
+                            android:id="@+id/LittleExerciseTextView"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign's of too little or too much Exercise"
+                            android:textSize="18sp"
+                            android:textColor="@color/primary_main_color"
+                            android:fontFamily="@font/roboto_bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-</ScrollView>
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navHome"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="Home"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Home"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navContacts"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="Contacts"
+                android:src="@drawable/ic_contacts" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Contacts"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/navProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/ic_profile" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Profile"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

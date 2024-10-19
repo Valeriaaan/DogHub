@@ -13,4 +13,8 @@
     <color name="text_light_color">#E6E0E9</color>
     <color name="stroke_light_color">#CAC4D0</color>
 
+    <color name="active_color">#FF8225</color>
+    <color name="inactive_color">#000</color>
+
+
 </resources>

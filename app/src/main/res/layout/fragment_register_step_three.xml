@@ -280,7 +280,7 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <!-- Button layout anchored to the bottom -->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/button_layout"
             android:layout_width="match_parent"
@@ -295,7 +295,7 @@
                 android:id="@+id/previousButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="30dp"
                 android:backgroundTint="@color/primary_main_color"
                 android:drawableLeft="@drawable/ic_previous_button"
                 android:paddingLeft="15dp"
@@ -314,7 +314,7 @@
                 android:id="@+id/nextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/primary_main_color"
                 android:drawableEnd="@drawable/ic_next_button"
                 android:paddingLeft="35dp"
