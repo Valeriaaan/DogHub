@@ -1,123 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RoutineCheckupsFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="@dimen/top_bar_dimen"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Title: Routine Checkups -->
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_main_color"
+                android:paddingTop="@dimen/dimen_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Routine Check-ups"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/icon_back"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/puppy_checkup_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Routine Checkups"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-            <!-- Puppy Checkup Section -->
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Puppy:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• First vet visit: Typically between 6-8 weeks old. The vet will perform a thorough physical exam, checking for any congenital issues, parasites, or signs of illness."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Vaccination schedule: Puppies need to visit the vet every 3-4 weeks until they're about 16 weeks old for core vaccinations like distemper, parvovirus, adenovirus, and rabies."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Growth monitoring: The vet will monitor growth, diet, and discuss spaying or neutering." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/adult_dog_checkup_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Puppy:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/puppy_checkup_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adult Dog:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Annual vet checkups: Adult dogs require yearly visits for a physical exam to check the heart, lungs, skin, and abdomen."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Vaccines and preventative care: Booster vaccines and blood tests to check for parasites, heartworms, and other health issues."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Dental health: Regular dental cleanings and exams to prevent gum disease and tooth decay."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Weight and nutrition: The vet monitors weight and provides dietary guidance." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/senior_dog_checkup_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• First vet visit: Typically between 6-8 weeks old. The vet will perform a thorough physical exam, checking for any congenital issues, parasites, or signs of illness."
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adult_dog_checkup_card">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Vaccination schedule: Puppies need to visit the vet every 3-4 weeks until they're about 16 weeks old for core vaccinations like distemper, parvovirus, adenovirus, and rabies."
-                android:paddingBottom="8dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Growth monitoring: The vet will monitor growth, diet, and discuss spaying or neutering."
-                android:paddingBottom="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Senior Dog:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
 
-            <!-- Adult Dog Checkup Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adult Dog:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Bi-annual vet visits: Senior dogs are more prone to health issues. Regular checkups help catch diseases like arthritis, kidney disease, or diabetes early."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Annual vet checkups: Adult dogs require yearly visits for a physical exam to check the heart, lungs, skin, and abdomen."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Joint and mobility health: Vets check for arthritis or hip problems and may suggest treatments."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Vaccines and preventative care: Booster vaccines and blood tests to check for parasites, heartworms, and other health issues."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Vision and hearing: Routine checks for cataracts or hearing loss."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Dental health: Regular dental cleanings and exams to prevent gum disease and tooth decay."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Bloodwork and diagnostics: More frequent tests may be needed to monitor organ function." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Weight and nutrition: The vet monitors weight and provides dietary guidance."
-                android:paddingBottom="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Senior Dog Checkup Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Senior Dog:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Bi-annual vet visits: Senior dogs are more prone to health issues. Regular checkups help catch diseases like arthritis, kidney disease, or diabetes early."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Joint and mobility health: Vets check for arthritis or hip problems and may suggest treatments."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Vision and hearing: Routine checks for cataracts or hearing loss."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Bloodwork and diagnostics: More frequent tests may be needed to monitor organ function."
-                android:paddingBottom="16dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-</FrameLayout>
+</ScrollView>

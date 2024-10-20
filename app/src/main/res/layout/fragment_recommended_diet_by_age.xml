@@ -1,222 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="nutrition_content.RecommendedDietByAge">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="back_button"
-            android:padding="12dp"
-            app:srcCompat="@drawable/backbutton" />
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_bar_dimen"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_main_color"
+                    android:paddingTop="@dimen/dimen_30dp"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Recommended Diet by Age"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/back_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@drawable/icon_back"
+                        android:padding="16dp" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/puppies_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Diet By Age"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Puppies:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
-    </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High-protein puppy food to support growth."
+                        android:paddingBottom="8dp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Example Foods:"
+                        android:textStyle="italic"/>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- Royal Canin Puppy\n- Hill’s Science Diet Puppy\n- Blue Buffalo Life Protection Puppy"
+                        android:paddingBottom="8dp"/>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feed 3-4 times a day." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <!-- Title -->
-
-
-
-            <!-- Puppies Section -->
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/adults_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Puppies:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/puppies_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adults:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balanced diet with protein, fats, and carbohydrates."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Example Foods:"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- Purina Pro Plan Adult\n- Taste of the Wild Adult\n- Wellness CORE Grain-Free Adult"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feed 2 times a day." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/seniors_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="High-protein puppy food to support growth."
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adults_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seniors:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Low-calorie, easy-to-digest food for weight management and joint health."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Example Foods:"
+                        android:textStyle="italic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- Hill’s Science Diet Senior\n- Blue Buffalo Life Protection Senior\n- Nutro Ultra Senior"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feed 1-2 times a day." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/portion_sizes_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                android:backgroundTint="@color/primary_main_color"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seniors_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Portion Sizes"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/puppy_portion_size_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="- Royal Canin Puppy\n- Hill’s Science Diet Puppy\n- Blue Buffalo Life Protection Puppy"
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/portion_sizes_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Puppies:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small, frequent meals based on weight and breed size (e.g., ½ to 1 cup per meal)."
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/adult_portion_size_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feed 3-4 times a day."
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/puppy_portion_size_card">
 
-            <!-- Adults Section -->
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adults:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-2 cups per meal for medium dogs (adjust for breed and activity)." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/senior_portion_size_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Adults:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adult_portion_size_card">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Balanced diet with protein, fats, and carbohydrates."
-                android:paddingBottom="8dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seniors:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Purina Pro Plan Adult\n- Taste of the Wild Adult\n- Wellness CORE Grain-Free Adult"
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smaller portions (½ to 1 cup) to prevent overfeeding." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed 2 times a day."
-                android:paddingBottom="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Seniors Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seniors:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Low-calorie, easy-to-digest food for weight management and joint health."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Hill’s Science Diet Senior\n- Blue Buffalo Life Protection Senior\n- Nutro Ultra Senior"
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Feed 1-2 times a day."
-                android:paddingBottom="16dp"/>
-
-            <!-- Portion Sizes Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Portion Sizes"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:paddingBottom="16dp"/>
-
-            <!-- Portion Size for Puppies -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Puppies:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Small, frequent meals based on weight and breed size (e.g., ½ to 1 cup per meal)."
-                android:paddingBottom="16dp"/>
-
-            <!-- Portion Size for Adults -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adults:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1-2 cups per meal for medium dogs (adjust for breed and activity)."
-                android:paddingBottom="16dp"/>
-
-            <!-- Portion Size for Seniors -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seniors:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Smaller portions (½ to 1 cup) to prevent overfeeding."
-                android:paddingBottom="16dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</FrameLayout>
+</ScrollView>

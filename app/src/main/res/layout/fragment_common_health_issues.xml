@@ -1,199 +1,314 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CommonHealthIssuesFragment">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/active_color"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="back_button"
-        android:padding="12dp"
-        app:srcCompat="@drawable/backbutton" />
-
-    <!-- Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Common Health Issues"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:paddingBottom="16dp"/>
-
-    </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="@dimen/top_bar_dimen"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_main_color"
+                android:paddingTop="@dimen/dimen_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Common Health Issues"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
 
-            <!-- Ear Infections Section -->
-            <TextView
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/icon_back"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ear_infections_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Ear Infections:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ear Infections:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms: Scratching at ears, head shaking, odor, redness."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prevention: Regular ear cleaning, especially for floppy-eared dogs." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/skin_allergies_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Symptoms: Scratching at ears, head shaking, odor, redness."
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ear_infections_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Skin Allergies:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms: Itching, redness, hair loss, frequent scratching."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prevention: Bathing with hypoallergenic shampoos, and keeping the skin clean and dry." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dental_disease_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prevention: Regular ear cleaning, especially for floppy-eared dogs."
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/skin_allergies_card">
 
-            <!-- Skin Allergies Section -->
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dental Disease:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms: Bad breath, inflamed gums, difficulty eating."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prevention: Regular teeth brushing, dental chews, and professional cleanings." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/obesity_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Skin Allergies:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dental_disease_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Obesity:"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms: Excessive weight gain, difficulty walking, lethargy."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prevention: Proper diet, portion control, and regular exercise." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/digestive_issues_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Symptoms: Itching, redness, hair loss, frequent scratching."
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/obesity_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Digestive Issues:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms: Diarrhea, vomiting, loss of appetite."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prevention: Avoid giving table scraps, maintain a consistent diet, and provide fresh water." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parasite_prevention_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prevention: Bathing with hypoallergenic shampoos, and keeping the skin clean and dry."
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/digestive_issues_card">
 
-            <!-- Dental Disease Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dental Disease:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Symptoms: Bad breath, inflamed gums, difficulty eating."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parasite Prevention:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prevention: Regular teeth brushing, dental chews, and professional cleanings."
-                android:paddingBottom="16dp"/>
+                    <!-- Fleas & Ticks -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fleas &amp; Ticks: Use monthly flea and tick preventatives, either oral or topical, especially in warmer months. Check your dog’s fur regularly for ticks after walks in wooded or grassy areas."
+                        android:paddingBottom="8dp"/>
 
-            <!-- Obesity Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Obesity:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                    <!-- Heartworm -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heartworm: Administer monthly heartworm preventatives, especially in regions where mosquitoes are common (as they transmit heartworm)."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Symptoms: Excessive weight gain, difficulty walking, lethargy."
-                android:paddingBottom="8dp"/>
+                    <!-- Intestinal Worms -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Intestinal Worms: Regular deworming (every 3-6 months) to prevent intestinal worms like roundworms, hookworms, and tapeworms. Monitor your dog’s stool for any signs of worms."
+                        android:paddingBottom="16dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prevention: Proper diet, portion control, and regular exercise."
-                android:paddingBottom="16dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <!-- Digestive Issues Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Digestive Issues:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Symptoms: Diarrhea, vomiting, loss of appetite."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prevention: Avoid giving table scraps, maintain a consistent diet, and provide fresh water."
-                android:paddingBottom="16dp"/>
-
-            <!-- Parasite Prevention Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Parasite Prevention:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <!-- Fleas & Ticks -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fleas &amp; Ticks: Use monthly flea and tick preventatives, either oral or topical, especially in warmer months. Check your dog’s fur regularly for ticks after walks in wooded or grassy areas."
-                android:paddingBottom="8dp"/>
-
-            <!-- Heartworm -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Heartworm: Administer monthly heartworm preventatives, especially in regions where mosquitoes are common (as they transmit heartworm)."
-                android:paddingBottom="8dp"/>
-
-            <!-- Intestinal Worms -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Intestinal Worms: Regular deworming (every 3-6 months) to prevent intestinal worms like roundworms, hookworms, and tapeworms. Monitor your dog’s stool for any signs of worms."
-                android:paddingBottom="16dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

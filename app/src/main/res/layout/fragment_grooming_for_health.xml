@@ -1,184 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".GroomingForHealthFragment">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="@dimen/top_bar_dimen"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/active_color"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:background="@color/primary_main_color"
+                android:paddingTop="@dimen/dimen_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <ImageView
-                    android:id="@+id/backButton"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="back_button"
-                    android:padding="12dp"
-                    app:srcCompat="@drawable/backbutton" />
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Grooming for Health"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
 
-                <TextView
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/icon_back"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/brushing_section_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Homemade Dog Food Guidelines"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="8dp" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brushing:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Frequency: Brush your dog at least 2-3 times a week, or daily for long-haired breeds prone to tangles."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Health benefits: Regular brushing distributes natural oils, promotes a shiny coat, and stimulates circulation."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Additional care: It helps spot skin issues like redness or parasites early." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <!-- Title: Grooming for Health -->
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nail_trimming_section_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Grooming for Health"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:paddingBottom="16dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/brushing_section_card">
 
-            <!-- Brushing Section -->
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nail Trimming:"
+                        android:textColor="@color/primary_main_color"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Frequency: Trim your dog’s nails every 3-4 weeks to prevent overgrowth and discomfort."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Signs: If you hear your dog's nails clicking on the floor, it's time for a trim."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Tips: Use dog-specific clippers and avoid cutting the quick." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teeth_cleaning_section_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Brushing:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/nail_trimming_section_card">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teeth Cleaning:"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Frequency: Brush your dog’s teeth 2-3 times per week to prevent plaque and gum disease."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Tools: Use a soft-bristled toothbrush and dog-specific toothpaste."
+                        android:paddingBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Additional care: Dental chews or toys can also help maintain oral hygiene." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bathing_section_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Frequency: Brush your dog at least 2-3 times a week, or daily for long-haired breeds prone to tangles."
-                android:paddingBottom="8dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/teeth_cleaning_section_card">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Health benefits: Regular brushing distributes natural oils, promotes a shiny coat, and stimulates circulation."
-                android:paddingBottom="8dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Additional care: It helps spot skin issues like redness or parasites early."
-                android:paddingBottom="16dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bathing:"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="18sp"
+                        android:paddingBottom="8dp"/>
 
-            <!-- Nail Trimming Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nail Trimming:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Frequency: Bathe your dog every 4-6 weeks or as needed, depending on breed and coat type."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Frequency: Trim your dog’s nails every 3-4 weeks to prevent overgrowth and discomfort."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Shampoo: Use dog-specific shampoos with natural ingredients or medicated formulas for skin conditions."
+                        android:paddingBottom="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Signs: If you hear your dog's nails clicking on the floor, it's time for a trim."
-                android:paddingBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Drying tips: Ensure your dog is completely dry, especially in cooler weather, using a towel or pet dryer." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Tips: Use dog-specific clippers and avoid cutting the quick."
-                android:paddingBottom="16dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <!-- Teeth Cleaning Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Teeth Cleaning:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Frequency: Brush your dog’s teeth 2-3 times per week to prevent plaque and gum disease."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Tools: Use a soft-bristled toothbrush and dog-specific toothpaste."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Additional care: Dental chews or toys can also help maintain oral hygiene."
-                android:paddingBottom="16dp"/>
-
-            <!-- Bathing Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bathing:"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Frequency: Bathe your dog every 4-6 weeks or as needed, depending on breed and coat type."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Shampoo: Use dog-specific shampoos with natural ingredients or medicated formulas for skin conditions."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Drying tips: Ensure your dog is completely dry, especially in cooler weather, using a towel or pet dryer."
-                android:paddingBottom="16dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
