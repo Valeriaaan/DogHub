@@ -200,7 +200,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Small Breeds (< 20 lbs): 400-600 kcal per day."
+                        android:text="Small Breeds (&lt; 20 lbs): 400-600 kcal per day."
                         android:paddingBottom="8dp"/>
 
                     <TextView
@@ -212,7 +212,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Large Breeds (> 50 lbs): 1,200-2,000 kcal per day." />
+                        android:text="Large Breeds (&lt; 50 lbs): 1,200-2,000 kcal per day." />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
