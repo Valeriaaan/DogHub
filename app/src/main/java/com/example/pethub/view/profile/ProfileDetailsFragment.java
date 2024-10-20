@@ -1,66 +1,77 @@
 package com.example.pethub.view.profile;
 
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.pethub.R;
+import com.example.pethub.view.RegistrationViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileDetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfileDetailsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RegistrationViewModel viewModel; // Declare ViewModel
+    private TextView nameTextView, breedTextView, ageTextView, sexTextView; // Add TextViews for other fields
+    private ImageView profileImageView; // To display the profile image
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ProfileDetailsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileDetailsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProfileDetailsFragment newInstance(String param1, String param2) {
+    public static ProfileDetailsFragment newInstance(String dogName, String dogBreed) {
         ProfileDetailsFragment fragment = new ProfileDetailsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString("DOG_NAME", dogName);
+        args.putString("DOG_BREED", dogBreed);
+        // Add other views for displaying vaccination date, due date, clinic, allergies, etc.
+
         fragment.setArguments(args);
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Initialize ViewModel
+        viewModel = new ViewModelProvider(requireActivity()).get(RegistrationViewModel.class);
+
+        // Retrieve arguments
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            String dogName = getArguments().getString("DOG_NAME");
+            String dogBreed = getArguments().getString("DOG_BREED");
+            // Set values in ViewModel or handle as needed
+            viewModel.setDogName(dogName);
+            viewModel.setDogBreed(dogBreed);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile_details, container, false);
+
+        // Initialize TextViews and ImageView
+        nameTextView = view.findViewById(R.id.textViewName);
+        breedTextView = view.findViewById(R.id.textViewBreed);
+
+
+        // Set the data from ViewModel
+        if (viewModel != null) {
+            nameTextView.setText(viewModel.getDogName() != null ? viewModel.getDogName() : "Unknown");
+            breedTextView.setText(viewModel.getDogBreed() != null ? viewModel.getDogBreed() : "Unknown");
+
+            // If you have a profile image, set it as well
+            String imageUri = viewModel.getProfileImageUri();
+            if (imageUri != null) {
+                profileImageView.setImageURI(Uri.parse(imageUri));
+            }
+        }
+
+        return view;
     }
+
 }

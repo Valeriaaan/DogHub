@@ -29,7 +29,7 @@
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView"
+                        android:id="@+id/RecommendCardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -332,7 +332,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Smaller portions (½ to 1 cup) to prevent overfeeding." />
+                        android:text="Smaller portions (½ to 1 cup) to prevent overfeeding."
+                        android:layout_marginBottom="20dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

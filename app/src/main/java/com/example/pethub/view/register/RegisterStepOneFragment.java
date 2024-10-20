@@ -1,8 +1,6 @@
 package com.example.pethub.view.register;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,12 +13,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider; // Import this for ViewModel
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pethub.R;
+import com.example.pethub.view.RegistrationViewModel;
+import com.example.pethub.view.profile.ProfileFragment;
 import com.google.android.material.button.MaterialButton;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -33,6 +35,8 @@ public class RegisterStepOneFragment extends Fragment {
     private static final int PICK_IMAGE = 2;
     private Uri selectedImageUri;
     private CircleImageView profileImageView;
+    private EditText editTextName, editTextBreed;
+    private RegistrationViewModel viewModel; // Declare ViewModel
 
     public RegisterStepOneFragment() {
         // Required empty public constructor
@@ -43,37 +47,30 @@ public class RegisterStepOneFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register_step_one, container, false);
 
-        profileImageView = view.findViewById(R.id.imageView2);
+        // Initialize ViewModel
+        viewModel = new ViewModelProvider(requireActivity()).get(RegistrationViewModel.class);
 
-        profileImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (selectedImageUri != null) {
-                    showEditDeleteDialog();
+        profileImageView = view.findViewById(R.id.imageView2);
+        editTextName = view.findViewById(R.id.editTextName);
+        editTextBreed = view.findViewById(R.id.editTextBreed);
+
+        profileImageView.setOnClickListener(v -> {
+            if (selectedImageUri != null) {
+                showEditDeleteDialog();
+            } else {
+                if (ContextCompat.checkSelfPermission(requireContext(),
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(requireActivity(),
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
                 } else {
-                    if (ContextCompat.checkSelfPermission(requireContext(),
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(requireActivity(),
-                                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
-                    } else {
-                        launchImagePicker();
-                    }
+                    launchImagePicker();
                 }
             }
         });
 
         MaterialButton nextButton = view.findViewById(R.id.next_button);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getParentFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, new RegisterStepTwoFragment())
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
+        nextButton.setOnClickListener(v -> validateInputs());
 
         return view;
     }
@@ -93,24 +90,40 @@ public class RegisterStepOneFragment extends Fragment {
         }
     }
 
+    private void validateInputs() {
+        String name = editTextName.getText().toString().trim();
+        String breed = editTextBreed.getText().toString().trim();
+
+        if (name.isEmpty() || breed.isEmpty()) {
+            Toast.makeText(getActivity(), "Please complete the form first.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Store the data in ViewModel
+        viewModel.setDogName(name);
+        viewModel.setDogBreed(breed);
+        if (selectedImageUri != null) {
+            viewModel.setProfileImageUri(selectedImageUri.toString());
+        }
+
+        // Navigate to RegisterStepTwoFragment
+        FragmentManager fragmentManager = getParentFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, new RegisterStepTwoFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+
+
     private void showEditDeleteDialog() {
         new AlertDialog.Builder(requireContext())
                 .setTitle("Edit or Delete Image")
                 .setMessage("What would you like to do?")
-                .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Launch image picker to edit the image
-                        launchImagePicker();
-                    }
-                })
-                .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Reset the ImageView to placeholder and clear the URI
-                        profileImageView.setImageResource(R.drawable.img_image_placeholder);
-                        selectedImageUri = null;
-                    }
+                .setPositiveButton("Edit", (dialog, which) -> launchImagePicker())
+                .setNegativeButton("Delete", (dialog, which) -> {
+                    profileImageView.setImageResource(R.drawable.img_image_placeholder);
+                    selectedImageUri = null;
                 })
                 .show();
     }

@@ -161,7 +161,7 @@
             <!--TYPES OF DOG FOOD-->
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/TypesDogFoodCardView"
+                android:id="@+id/Treats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_20dp"
@@ -215,7 +215,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/FoodAvoidCardView"
+                android:id="@+id/HomamadeDogFoodGuidelines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_20dp"
@@ -225,7 +225,7 @@
                 app:cardElevation="2dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TypesDogFoodCardView">
+                app:layout_constraintTop_toBottomOf="@+id/Treats">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -265,59 +265,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!--TREATS-->
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/TreatsCardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                android:layout_marginHorizontal="@dimen/dimen_16dp"
-                android:layout_marginBottom="5.5dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="2dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/FoodAvoidCardView">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/TreatsIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingVertical="16dp"
-                        android:gravity="center_vertical"
-                        android:padding="@dimen/dimen_16dp">
-
-                        <TextView
-                            android:id="@+id/TreatsTextView"
-                            android:maxLines="2"
-                            android:ellipsize="end"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="EWAN KO KUNG LALAGYAN PA ITO"
-                            android:textSize="18sp"
-                            android:textColor="@color/primary_main_color"
-                            android:fontFamily="@font/roboto_bold" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

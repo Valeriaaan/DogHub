@@ -1,4 +1,4 @@
-package nutrition_content;
+package health_content;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.FragmentManager;
 import com.example.pethub.R;
 
-public class HomemadeDogfoodGuidelines extends Fragment {
+public class MentalhealthEnrichment_kit_essentials extends Fragment {
 
-    public HomemadeDogfoodGuidelines() {
+    public MentalhealthEnrichment_kit_essentials() {
         // Required empty public constructor
     }
 
@@ -18,7 +18,7 @@ public class HomemadeDogfoodGuidelines extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_homemade_dogfood_guidelines, container, false);
+        View view = inflater.inflate(R.layout.fragment_mental_health_enrichment_kit_essentials, container, false);
 
         // Find the back icon
         View backIcon = view.findViewById(R.id.back_icon);
