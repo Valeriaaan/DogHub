@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nutrition_content.TypesOfDogFoodFragment">
+    tools:context=".GroomingForHealthFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,156 +15,121 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Title: Types of Dog Food -->
+            <!-- Title: Grooming for Health -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Types of Dog Food"
+                android:text="Grooming for Health"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:paddingBottom="16dp"/>
 
-            <!-- Dry Food (Kibble) -->
+            <!-- Brushing Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dry Food (Kibble):"
+                android:text="Brushing:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Long shelf life and good for dental health."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
+                android:text="• Frequency: Brush your dog at least 2-3 times a week, or daily for long-haired breeds prone to tangles."
+                android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Orijen Original\n- Acana Wholesome Grains\n- Merrick Grain-Free"
+                android:text="• Health benefits: Regular brushing distributes natural oils, promotes a shiny coat, and stimulates circulation."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Additional care: It helps spot skin issues like redness or parasites early."
                 android:paddingBottom="16dp"/>
 
-            <!-- Wet Food (Canned) -->
+            <!-- Nail Trimming Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wet Food (Canned):"
+                android:text="Nail Trimming:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Great for hydration and picky eaters."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
+                android:text="• Frequency: Trim your dog’s nails every 3-4 weeks to prevent overgrowth and discomfort."
+                android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Pedigree Chopped Ground Dinner\n- Nutro Hearty Stews\n- Hill’s Science Diet Wet Dog Food"
+                android:text="• Signs: If you hear your dog's nails clicking on the floor, it's time for a trim."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Tips: Use dog-specific clippers and avoid cutting the quick."
                 android:paddingBottom="16dp"/>
 
-            <!-- Raw Food -->
+            <!-- Teeth Cleaning Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Raw Food:"
+                android:text="Teeth Cleaning:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Natural raw meat, bones, and veggies."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
+                android:text="• Frequency: Brush your dog’s teeth 2-3 times per week to prevent plaque and gum disease."
+                android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Instinct Raw Frozen Bites\n- Stella  Chewy’s Raw Dinner Patties\n- Primal Pet Foods Raw Dog Food"
+                android:text="• Tools: Use a soft-bristled toothbrush and dog-specific toothpaste."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Additional care: Dental chews or toys can also help maintain oral hygiene."
                 android:paddingBottom="16dp"/>
 
-            <!-- Homemade Food -->
+            <!-- Bathing Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Homemade Food:"
+                android:text="Bathing:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prepared at home using lean meats, vegetables, and grains."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Simple Recipe Example:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Chicken, Rice, and Veggie Mix: Cooked chicken breast, brown rice, carrots, and peas."
-                android:paddingBottom="16dp"/>
-
-            <!-- Foods to Avoid Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Foods to Avoid"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:paddingBottom="16dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chocolate: Toxic due to theobromine content."
+                android:text="• Frequency: Bathe your dog every 4-6 weeks or as needed, depending on breed and coat type."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Grapes &amp; Raisins: Can cause kidney failure."
+                android:text="• Shampoo: Use dog-specific shampoos with natural ingredients or medicated formulas for skin conditions."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Onions &amp; Garlic: Harmful to red blood cells."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xylitol: Found in sugar-free products, extremely toxic to dogs."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cooked Bones: Can splinter and cause internal damage."
+                android:text="• Drying tips: Ensure your dog is completely dry, especially in cooler weather, using a towel or pet dryer."
                 android:paddingBottom="16dp"/>
 
         </LinearLayout>

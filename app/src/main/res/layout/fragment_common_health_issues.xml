@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nutrition_content.TypesOfDogFoodFragment">
+    tools:context=".CommonHealthIssuesFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,156 +15,142 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Title: Types of Dog Food -->
+            <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Types of Dog Food"
+                android:text="Common Health Issues"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:paddingBottom="16dp"/>
 
-            <!-- Dry Food (Kibble) -->
+            <!-- Ear Infections Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dry Food (Kibble):"
+                android:text="Ear Infections:"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Long shelf life and good for dental health."
+                android:text="Symptoms: Scratching at ears, head shaking, odor, redness."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Orijen Original\n- Acana Wholesome Grains\n- Merrick Grain-Free"
+                android:text="Prevention: Regular ear cleaning, especially for floppy-eared dogs."
                 android:paddingBottom="16dp"/>
 
-            <!-- Wet Food (Canned) -->
+            <!-- Skin Allergies Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wet Food (Canned):"
+                android:text="Skin Allergies:"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Great for hydration and picky eaters."
+                android:text="Symptoms: Itching, redness, hair loss, frequent scratching."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Pedigree Chopped Ground Dinner\n- Nutro Hearty Stews\n- Hill’s Science Diet Wet Dog Food"
+                android:text="Prevention: Bathing with hypoallergenic shampoos, and keeping the skin clean and dry."
                 android:paddingBottom="16dp"/>
 
-            <!-- Raw Food -->
+            <!-- Dental Disease Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Raw Food:"
+                android:text="Dental Disease:"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Natural raw meat, bones, and veggies."
+                android:text="Symptoms: Bad breath, inflamed gums, difficulty eating."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Instinct Raw Frozen Bites\n- Stella  Chewy’s Raw Dinner Patties\n- Primal Pet Foods Raw Dog Food"
+                android:text="Prevention: Regular teeth brushing, dental chews, and professional cleanings."
                 android:paddingBottom="16dp"/>
 
-            <!-- Homemade Food -->
+            <!-- Obesity Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Homemade Food:"
+                android:text="Obesity:"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prepared at home using lean meats, vegetables, and grains."
+                android:text="Symptoms: Excessive weight gain, difficulty walking, lethargy."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Simple Recipe Example:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Chicken, Rice, and Veggie Mix: Cooked chicken breast, brown rice, carrots, and peas."
+                android:text="Prevention: Proper diet, portion control, and regular exercise."
                 android:paddingBottom="16dp"/>
 
-            <!-- Foods to Avoid Section -->
+            <!-- Digestive Issues Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Foods to Avoid"
+                android:text="Digestive Issues:"
                 android:textStyle="bold"
-                android:textSize="24sp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Symptoms: Diarrhea, vomiting, loss of appetite."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prevention: Avoid giving table scraps, maintain a consistent diet, and provide fresh water."
                 android:paddingBottom="16dp"/>
 
+            <!-- Parasite Prevention Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chocolate: Toxic due to theobromine content."
+                android:text="Parasite Prevention:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <!-- Fleas & Ticks -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fleas &amp; Ticks: Use monthly flea and tick preventatives, either oral or topical, especially in warmer months. Check your dog’s fur regularly for ticks after walks in wooded or grassy areas."
                 android:paddingBottom="8dp"/>
 
+            <!-- Heartworm -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Grapes &amp; Raisins: Can cause kidney failure."
+                android:text="Heartworm: Administer monthly heartworm preventatives, especially in regions where mosquitoes are common (as they transmit heartworm)."
                 android:paddingBottom="8dp"/>
 
+            <!-- Intestinal Worms -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Onions &amp; Garlic: Harmful to red blood cells."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xylitol: Found in sugar-free products, extremely toxic to dogs."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cooked Bones: Can splinter and cause internal damage."
+                android:text="Intestinal Worms: Regular deworming (every 3-6 months) to prevent intestinal worms like roundworms, hookworms, and tapeworms. Monitor your dog’s stool for any signs of worms."
                 android:paddingBottom="16dp"/>
 
         </LinearLayout>

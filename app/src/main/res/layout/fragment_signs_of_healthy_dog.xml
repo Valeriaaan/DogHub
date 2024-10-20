@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nutrition_content.TypesOfDogFoodFragment">
+    tools:context=".SignsOfHealthyDogFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,124 +15,125 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Title: Types of Dog Food -->
+            <!-- Title: Signs of a Healthy Dog -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Types of Dog Food"
+                android:text="Signs of a Healthy Dog"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:paddingBottom="16dp"/>
 
-            <!-- Dry Food (Kibble) -->
+            <!-- Bright Eyes Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dry Food (Kibble):"
+                android:text="Bright Eyes:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Long shelf life and good for dental health."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Orijen Original\n- Acana Wholesome Grains\n- Merrick Grain-Free"
-                android:paddingBottom="16dp"/>
-
-            <!-- Wet Food (Canned) -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wet Food (Canned):"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Great for hydration and picky eaters."
+                android:text="• What to look for: Clear, bright eyes without discharge or redness."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Pedigree Chopped Ground Dinner\n- Nutro Hearty Stews\n- Hill’s Science Diet Wet Dog Food"
+                android:text="• Warning signs: Redness, tearing, or squinting could indicate infections or allergies."
                 android:paddingBottom="16dp"/>
 
-            <!-- Raw Food -->
+            <!-- Shiny Coat Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Raw Food:"
+                android:text="Shiny Coat:"
                 android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Natural raw meat, bones, and veggies."
+                android:textSize="18sp"
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Example Foods:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Instinct Raw Frozen Bites\n- Stella  Chewy’s Raw Dinner Patties\n- Primal Pet Foods Raw Dog Food"
-                android:paddingBottom="16dp"/>
-
-            <!-- Homemade Food -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Homemade Food:"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prepared at home using lean meats, vegetables, and grains."
+                android:text="• What to look for: Glossy, smooth coat that reflects good nutrition and overall health."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Simple Recipe Example:"
-                android:textStyle="italic"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- Chicken, Rice, and Veggie Mix: Cooked chicken breast, brown rice, carrots, and peas."
+                android:text="• Warning signs: Dull, dry, or greasy coat could indicate poor diet, parasites, or skin conditions."
                 android:paddingBottom="16dp"/>
 
-            <!-- Foods to Avoid Section -->
+            <!-- Normal Appetite Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Foods to Avoid"
+                android:text="Normal Appetite:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• What to look for: Steady appetite and a healthy weight without sudden fluctuations."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Warning signs: Loss of appetite, sudden weight changes, or overeating should be checked by a vet."
+                android:paddingBottom="16dp"/>
+
+            <!-- Good Energy Levels Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good Energy Levels:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• What to look for: Active and playful when awake, with energy levels suitable for their age and breed."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Warning signs: Sudden lethargy or reluctance to exercise may indicate health issues."
+                android:paddingBottom="16dp"/>
+
+            <!-- Healthy Gums and Teeth Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Healthy Gums and Teeth:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• What to look for: Pink, moist gums and clean teeth free from tartar buildup."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Warning signs: Bad breath, tartar buildup, or swollen gums could indicate dental disease."
+                android:paddingBottom="16dp"/>
+
+            <!-- Dental Care Tips Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dental Care Tips:"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:paddingBottom="16dp"/>
@@ -140,31 +141,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chocolate: Toxic due to theobromine content."
+                android:text="• Signs of Dental Disease: Look for bad breath, gum inflammation, and reluctance to eat hard foods."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Grapes &amp; Raisins: Can cause kidney failure."
+                android:text="• Preventative Care: Brush your dog’s teeth daily, or use dental chews and water additives."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Onions &amp; Garlic: Harmful to red blood cells."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Xylitol: Found in sugar-free products, extremely toxic to dogs."
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cooked Bones: Can splinter and cause internal damage."
+                android:text="• Professional Cleanings: Schedule yearly professional dental cleanings, especially for small breeds prone to dental issues."
                 android:paddingBottom="16dp"/>
 
         </LinearLayout>

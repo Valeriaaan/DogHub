@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nutrition_content.TreatsFragment">
+    tools:context=".RoutineCheckupsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,20 +15,20 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Title: Treats -->
+            <!-- Title: Routine Checkups -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Treats"
+                android:text="Routine Checkups"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:paddingBottom="16dp"/>
 
-            <!-- Healthy Treat Options Section -->
+            <!-- Puppy Checkup Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Healthy Treat Options:"
+                android:text="Puppy:"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:paddingBottom="8dp"/>
@@ -36,14 +36,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Carrot Sticks\n- Small Apple Slices (without seeds)\n- Blue Buffalo Wilderness Trail Treats\n- Zuke’s Mini Naturals (low-calorie, training treats)"
-                android:paddingBottom="16dp"/>
+                android:text="• First vet visit: Typically between 6-8 weeks old. The vet will perform a thorough physical exam, checking for any congenital issues, parasites, or signs of illness."
+                android:paddingBottom="8dp"/>
 
-            <!-- Recipe Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Healthy Homemade Treat Recipes:"
+                android:text="• Vaccination schedule: Puppies need to visit the vet every 3-4 weeks until they're about 16 weeks old for core vaccinations like distemper, parvovirus, adenovirus, and rabies."
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Growth monitoring: The vet will monitor growth, diet, and discuss spaying or neutering."
+                android:paddingBottom="16dp"/>
+
+            <!-- Adult Dog Checkup Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adult Dog:"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:paddingBottom="8dp"/>
@@ -51,26 +63,32 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Peanut Butter and Pumpkin Biscuits: Made from natural ingredients."
+                android:text="• Annual vet checkups: Adult dogs require yearly visits for a physical exam to check the heart, lungs, skin, and abdomen."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- Frozen Yogurt Treats: Blend yogurt with dog-safe fruits like bananas and freeze them into bite-sized treats."
-                android:paddingBottom="16dp"/>
+                android:text="• Vaccines and preventative care: Booster vaccines and blood tests to check for parasites, heartworms, and other health issues."
+                android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="These add variety and give owners the ability to create special snacks for their dogs."
-                android:paddingBottom="16dp"/>
+                android:text="• Dental health: Regular dental cleanings and exams to prevent gum disease and tooth decay."
+                android:paddingBottom="8dp"/>
 
-            <!-- Guidelines Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Guidelines:"
+                android:text="• Weight and nutrition: The vet monitors weight and provides dietary guidance."
+                android:paddingBottom="16dp"/>
+
+            <!-- Senior Dog Checkup Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senior Dog:"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:paddingBottom="8dp"/>
@@ -78,34 +96,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Treats should only make up 10% of daily caloric intake."
-                android:paddingBottom="16dp"/>
-
-            <!-- Caloric Needs by Size Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caloric Needs by Size:"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:text="• Bi-annual vet visits: Senior dogs are more prone to health issues. Regular checkups help catch diseases like arthritis, kidney disease, or diabetes early."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Small Breeds (< 20 lbs): 400-600 kcal per day."
+                android:text="• Joint and mobility health: Vets check for arthritis or hip problems and may suggest treatments."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium Breeds (20-50 lbs): 800-1,200 kcal per day."
+                android:text="• Vision and hearing: Routine checks for cataracts or hearing loss."
                 android:paddingBottom="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Large Breeds (> 50 lbs): 1,200-2,000 kcal per day."
+                android:text="• Bloodwork and diagnostics: More frequent tests may be needed to monitor organ function."
                 android:paddingBottom="16dp"/>
 
         </LinearLayout>

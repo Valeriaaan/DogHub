@@ -1,4 +1,4 @@
-package com.example.pethub;
+package nutrition_content;
 
 import android.app.Activity;
 

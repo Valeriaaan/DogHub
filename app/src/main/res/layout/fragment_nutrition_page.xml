@@ -147,7 +147,7 @@
                             android:ellipsize="end"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Portion Size"
+                            android:text="Types of Dog Food"
                             android:textSize="18sp"
                             android:textColor="@color/primary_main_color"
                             android:fontFamily="@font/roboto_bold" />
@@ -200,7 +200,7 @@
                             android:ellipsize="end"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Types of Dog Food"
+                            android:text="Treats"
                             android:textSize="18sp"
                             android:textColor="@color/primary_main_color"
                             android:fontFamily="@font/roboto_bold" />
@@ -254,7 +254,7 @@
                             android:ellipsize="end"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Foods to Avoid"
+                            android:text="Homemade DogFood Guidelines"
                             android:textSize="18sp"
                             android:textColor="@color/primary_main_color"
                             android:fontFamily="@font/roboto_bold" />
