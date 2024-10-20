@@ -1,0 +1,128 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="exercise_content.indoor_outdoor_exercises">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/active_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="back_button"
+        android:padding="12dp"
+        app:srcCompat="@drawable/backbutton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Indoor Exercise"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Tug-of-War:This is a great way to build strength and bond with your dog. Use sturdy toys designed for tugging, and ensure you establish rules to keep the game controlled." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide and Seek: Engage your dog by hiding treats or toys around the house. This stimulates their natural hunting instincts and provides mental and physical activity." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stair Climbing: If appropriate for your dog’s age and health, using stairs can be an excellent workout. Toss a toy or treat up the stairs and encourage them to retrieve it." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obstacle Course: Set up an indoor agility course using household items like chairs, cushions, and boxes. This promotes physical activity and helps develop coordination." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Interactive Toys: Invest in puzzle toys that require your dog to figure out how to get a treat. These can keep them occupied for extended periods and provide mental stimulation." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outdoor Exercise"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Walking: This is the most basic and essential form of exercise for dogs. It provides cardiovascular benefits, mental stimulation, and social interaction. Aim for at least 30 minutes of walking per day, adjusting the intensity based on your dog's age, breed, and health." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Running: If your dog is healthy and enjoys running, this is a great way to get a high-intensity workout. Be sure to start slowly and gradually increase the distance and intensity." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hiking: A  wonderful way to exercise your dog and enjoy the outdoors. Choose trails appropriate for your dog's age and ability, and be sure to pack plenty of water and snacks." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Swimming: A low-impact exercise that is great for dogs of all ages and sizes. It provides a full-body workout and is especially beneficial for dogs with joint problems." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playing Fetch: Classic dog game that provides both physical and mental stimulation. Be sure to use a sturdy ball and play in a safe area." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agility Training: A fun and challenging way to exercise your dog. It involves navigating obstacles like jumps, tunnels, and weaving poles." />
+
+         </LinearLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

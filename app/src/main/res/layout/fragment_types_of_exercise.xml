@@ -1,0 +1,137 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="exercise_content.exercise_by_age">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/active_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="back_button"
+        android:padding="12dp"
+        app:srcCompat="@drawable/backbutton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Types of Exercise for Dogs"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Physical Exercise:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cardiovascular Health: Activities like walking, running, and swimming are crucial for maintaining a healthy heart and lungs. These exercises also help regulate blood pressure and improve circulation." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muscle Tone: Regular physical activity helps build and maintain muscle mass, which is essential for strength, flexibility, and overall mobility." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Structured Activities: Fetch, agility training, and other structured activities provide a fun and engaging way to enhance physical fitness. These activities also help improve coordination, focus, and obedience." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mental Exercise:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Puzzle Toys: These challenge your dog's problem-solving skills by requiring them to figure out how to get a treat or toy. Popular examples include treat-dispensing balls, puzzle feeders, and interactive toys." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scent Work: Dogs have an incredible sense of smell. Scent work games, like hiding treats and having your dog sniff them out, provide a stimulating mental workout." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Training Sessions: Learning new commands or tricks not only strengthens the bond between you and your dog, but also provides a mental challenge." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Social Exercise:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dog Parks: Dog parks provide a safe and supervised environment for dogs to socialize and play with other dogs. This helps them develop important social skills, such as appropriate play behavior and how to interact with different personalities." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organized Playdates: Arranging playdates with other dogs you know and trust can be a great way to provide social interaction in a controlled environment." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group Classes: Obedience classes, agility classes, and other group activities offer opportunities for socialization while also teaching valuable skills and providing mental stimulation." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember: The type and amount of exercise your dog needs will vary depending on their age, breed, health, and individual needs. It's important to consult with your veterinarian to determine a safe and appropriate exercise plan for your furry friend." />
+
+        </LinearLayout>
+
+    </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>
