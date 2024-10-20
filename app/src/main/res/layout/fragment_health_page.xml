@@ -254,7 +254,7 @@
                             android:ellipsize="end"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Parasite Prevention"
+                            android:text="Mental Health Enrichment &amp; Essential Kit"
                             android:textSize="18sp"
                             android:textColor="@color/primary_main_color"
                             android:fontFamily="@font/roboto_bold" />
