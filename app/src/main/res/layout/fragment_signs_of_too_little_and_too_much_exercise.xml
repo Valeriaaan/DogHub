@@ -1,213 +1,284 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="exercise_content.signs_of_too_little_and_too_much_exercise">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/active_color"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="back_button"
-        android:padding="12dp"
-        app:srcCompat="@drawable/backbutton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Signs of Too Little Exercise"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="@dimen/top_bar_dimen"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_main_color"
+                android:paddingTop="@dimen/dimen_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Types of Exercises for Dogs"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/icon_back"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/signsOfTooLittleExerciseCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Behavioral Issues:" />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Signs of Too Little Exercise"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Behavioral Issues:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Excessive barking: A dog may bark excessively if they are bored or frustrated due to lack of physical and mental stimulation." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Destructive behavior: This can include chewing on furniture, digging, or other destructive behaviors that can be a result of pent-up energy." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Restlessness: A dog may pace, whine, or show other signs of restlessness if they are not getting enough exercise." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anxiety or hyperactivity: A lack of exercise can lead to anxiety and hyperactivity, as the dog struggles to release pent-up energy." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Physical Health:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weight gain: A lack of exercise can contribute to weight gain, as the dog burns fewer calories and is more likely to eat excessively." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lethargy or reluctance to play: A dog that is not getting enough exercise may be lethargic and reluctant to play, as they lack the energy to engage in activities." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health Problems:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Obesity: Chronic inactivity can lead to obesity, which can put a strain on the dog's joints and increase the risk of other health problems." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Joint problems: A lack of exercise can weaken muscles and joints, making the dog more susceptible to joint problems." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Other health issues related to inactivity: Inactivity can also contribute to other health problems, such as heart disease, diabetes, and some types of cancer." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--            SIGN'S OF TOO MUCH EXERCISE-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/signsOfTooMuchExerciseCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Excessive barking: A dog may bark excessively if they are bored or frustrated due to lack of physical and mental stimulation." />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/signsOfTooLittleExerciseCardView">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Signs of Too Much Exercise"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Physical Signs:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Excessive panting: A dog may pant excessively if they are overexerted." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drooling: Drooling can be a sign of overheating or fatigue." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Limping: Can indicate an injury, which may be caused by overexertion." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unusual tiredness: A dog that is overexerted may be unusually tired and may refuse to engage in further activity." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Refusal to engage in further activity: A dog may refuse to engage in further activity if they are tired or injured." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Behavioral Changes:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Irritability or aggression: A dog that is overexerted may be irritable or aggressive, as they are not able to cope with the stress of the activity." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Health Risks:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Injuries: Overexertion can lead to injuries, especially in high-energy or young dogs." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overheating: Overexertion can cause a dog to overheat, especially in hot weather." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--            KEY TAKE AWAYS-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/keyTakeawaysCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Destructive behavior: This can include chewing on furniture, digging, or other destructive behaviors that can be a result of pent-up energy." />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/signsOfTooMuchExerciseCardView">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Restlessness: A dog may pace, whine, or show other signs of restlessness if they are not getting enough exercise." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anxiety or hyperactivity: A lack of exercise can lead to anxiety and hyperactivity, as the dog struggles to release pent-up energy." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_main_color"
+                        android:text="Key Takeaways:" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Physical Health:" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="It is crucial to provide your dog with an appropriate amount of exercise to maintain their physical and mental well-being." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weight gain: A lack of exercise can contribute to weight gain, as the dog burns fewer calories and is more likely to eat excessively." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recognizing the signs of both too little and too much exercise is essential for ensuring your dog's health and safety." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lethargy or reluctance to play: A dog that is not getting enough exercise may be lethargic and reluctant to play, as they lack the energy to engage in activities." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Always adjust your dog's exercise routine based on their individual needs and responses." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health Problems:" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="If you notice any concerning signs, consult with your veterinarian for professional advice." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Obesity: Chronic inactivity can lead to obesity, which can put a strain on the dog's joints and increase the risk of other health problems." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Joint problems: A lack of exercise can weaken muscles and joints, making the dog more susceptible to joint problems." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other health issues related to inactivity: Inactivity can also contribute to other health problems, such as heart disease, diabetes, and some types of cancer." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Signs of Too Much Exercise"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Physical Signs:" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Excessive panting: A dog may pant excessively if they are overexerted." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Drooling: Drooling can be a sign of overheating or fatigue." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Limping: Can indicate an injury, which may be caused by overexertion." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Unusual tiredness: A dog that is overexerted may be unusually tired and may refuse to engage in further activity." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Refusal to engage in further activity: A dog may refuse to engage in further activity if they are tired or injured." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Behavioral Changes:" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Irritability or aggression: A dog that is overexerted may be irritable or aggressive, as they are not able to cope with the stress of the activity." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health Risks:" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Injuries: Overexertion can lead to injuries, especially in high-energy or young dogs." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Overheating: Overexertion can cause a dog to overheat, especially in hot weather." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Key Takeaways:" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="It is crucial to provide your dog with an appropriate amount of exercise to maintain their physical and mental well-being." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recognizing the signs of both too little and too much exercise is essential for ensuring your dog's health and safety." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Always adjust your dog's exercise routine based on their individual needs and responses." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="If you notice any concerning signs, consult with your veterinarian for professional advice." />
-
-            </LinearLayout>
-         </ScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</FrameLayout>
+         </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

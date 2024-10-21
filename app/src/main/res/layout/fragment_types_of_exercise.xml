@@ -1,137 +1,193 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="exercise_content.exercise_by_age">
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/active_color"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="back_button"
-        android:padding="12dp"
-        app:srcCompat="@drawable/backbutton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Types of Exercise for Dogs"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="@dimen/top_bar_dimen"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_main_color"
+                android:paddingTop="@dimen/dimen_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Types of Exercises for Dogs"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/icon_back"
+                    android:padding="16dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/exerciseCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Physical Exercise:"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Physical Exercise:"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiovascular Health: Activities like walking, running, and swimming are crucial for maintaining a healthy heart and lungs. These exercises also help regulate blood pressure and improve circulation." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Muscle Tone: Regular physical activity helps build and maintain muscle mass, which is essential for strength, flexibility, and overall mobility." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Structured Activities: Fetch, agility training, and other structured activities provide a fun and engaging way to enhance physical fitness. These activities also help improve coordination, focus, and obedience." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mentalExerciseCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cardiovascular Health: Activities like walking, running, and swimming are crucial for maintaining a healthy heart and lungs. These exercises also help regulate blood pressure and improve circulation." />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseCardView">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mental Exercise:"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Puzzle Toys: These challenge your dog's problem-solving skills by requiring them to figure out how to get a treat or toy. Popular examples include treat-dispensing balls, puzzle feeders, and interactive toys." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scent Work: Dogs have an incredible sense of smell. Scent work games, like hiding treats and having your dog sniff them out, provide a stimulating mental workout." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Training Sessions: Learning new commands or tricks not only strengthens the bond between you and your dog, but also provides a mental challenge." />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--            SOCIAL EXERCISES-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/socialExerciseCardView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Muscle Tone: Regular physical activity helps build and maintain muscle mass, which is essential for strength, flexibility, and overall mobility." />
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mentalExerciseCardView">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Structured Activities: Fetch, agility training, and other structured activities provide a fun and engaging way to enhance physical fitness. These activities also help improve coordination, focus, and obedience." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mental Exercise:"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Social Exercise:"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Puzzle Toys: These challenge your dog's problem-solving skills by requiring them to figure out how to get a treat or toy. Popular examples include treat-dispensing balls, puzzle feeders, and interactive toys." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dog Parks: Dog parks provide a safe and supervised environment for dogs to socialize and play with other dogs. This helps them develop important social skills, such as appropriate play behavior and how to interact with different personalities." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Scent Work: Dogs have an incredible sense of smell. Scent work games, like hiding treats and having your dog sniff them out, provide a stimulating mental workout." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organized Playdates: Arranging playdates with other dogs you know and trust can be a great way to provide social interaction in a controlled environment." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Training Sessions: Learning new commands or tricks not only strengthens the bond between you and your dog, but also provides a mental challenge." />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Group Classes: Obedience classes, agility classes, and other group activities offer opportunities for socialization while also teaching valuable skills and providing mental stimulation." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Social Exercise:"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remember: The type and amount of exercise your dog needs will vary depending on their age, breed, health, and individual needs. It's important to consult with your veterinarian to determine a safe and appropriate exercise plan for your furry friend." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dog Parks: Dog parks provide a safe and supervised environment for dogs to socialize and play with other dogs. This helps them develop important social skills, such as appropriate play behavior and how to interact with different personalities." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Organized Playdates: Arranging playdates with other dogs you know and trust can be a great way to provide social interaction in a controlled environment." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Group Classes: Obedience classes, agility classes, and other group activities offer opportunities for socialization while also teaching valuable skills and providing mental stimulation." />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remember: The type and amount of exercise your dog needs will vary depending on their age, breed, health, and individual needs. It's important to consult with your veterinarian to determine a safe and appropriate exercise plan for your furry friend." />
-
-        </LinearLayout>
-
-    </ScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
