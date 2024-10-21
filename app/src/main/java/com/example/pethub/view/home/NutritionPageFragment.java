@@ -32,6 +32,12 @@ public class NutritionPageFragment extends Fragment {
         // Set up navigation for Home
         ImageView navHome = view.findViewById(R.id.navHome);
         navHome.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new HomeFragment());
             transaction.addToBackStack(null);
@@ -41,6 +47,12 @@ public class NutritionPageFragment extends Fragment {
         // Set up navigation for Contacts
         ImageView navContacts = view.findViewById(R.id.navContacts);
         navContacts.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new ContactsFragment());
             transaction.addToBackStack(null);
@@ -50,6 +62,12 @@ public class NutritionPageFragment extends Fragment {
         // Set up navigation for Profile
         ImageView navProfile = view.findViewById(R.id.navProfile);
         navProfile.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new ProfileFragment());
             transaction.addToBackStack(null);

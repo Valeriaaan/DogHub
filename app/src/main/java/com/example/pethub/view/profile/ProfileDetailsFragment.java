@@ -17,37 +17,17 @@ import com.example.pethub.view.RegistrationViewModel;
 public class ProfileDetailsFragment extends Fragment {
 
     private RegistrationViewModel viewModel; // Declare ViewModel
-    private TextView nameTextView, breedTextView, ageTextView, sexTextView; // Add TextViews for other fields
-    private ImageView profileImageView; // To display the profile image
 
-    public static ProfileDetailsFragment newInstance(String dogName, String dogBreed) {
-        ProfileDetailsFragment fragment = new ProfileDetailsFragment();
-        Bundle args = new Bundle();
-        args.putString("DOG_NAME", dogName);
-        args.putString("DOG_BREED", dogBreed);
-        // Add other views for displaying vaccination date, due date, clinic, allergies, etc.
-
-        fragment.setArguments(args);
-        return fragment;
+    public ProfileDetailsFragment() {
+        // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Initialize ViewModel
         viewModel = new ViewModelProvider(requireActivity()).get(RegistrationViewModel.class);
-
-        // Retrieve arguments
-        if (getArguments() != null) {
-            String dogName = getArguments().getString("DOG_NAME");
-            String dogBreed = getArguments().getString("DOG_BREED");
-            // Set values in ViewModel or handle as needed
-            viewModel.setDogName(dogName);
-            viewModel.setDogBreed(dogBreed);
-        }
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,23 +35,20 @@ public class ProfileDetailsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile_details, container, false);
 
         // Initialize TextViews and ImageView
-        nameTextView = view.findViewById(R.id.textViewName);
-        breedTextView = view.findViewById(R.id.textViewBreed);
+        TextView nameTextView = view.findViewById(R.id.textViewName);
+        TextView breedTextView = view.findViewById(R.id.textViewBreed);
+        ImageView profileImageView = view.findViewById(R.id.user_info_card); // Ensure profileImageView is initialized
 
+        // Display default or placeholder information
+        nameTextView.setText("Dog Name");
+        breedTextView.setText("Dog Breed");
 
-        // Set the data from ViewModel
-        if (viewModel != null) {
-            nameTextView.setText(viewModel.getDogName() != null ? viewModel.getDogName() : "Unknown");
-            breedTextView.setText(viewModel.getDogBreed() != null ? viewModel.getDogBreed() : "Unknown");
-
-            // If you have a profile image, set it as well
-            String imageUri = viewModel.getProfileImageUri();
-            if (imageUri != null) {
-                profileImageView.setImageURI(Uri.parse(imageUri));
-            }
+        // Handle profile image (if any exists)
+        String imageUri = viewModel.getProfileImageUri();
+        if (imageUri != null) {
+            profileImageView.setImageURI(Uri.parse(imageUri));
         }
 
         return view;
     }
-
 }

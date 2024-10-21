@@ -33,6 +33,12 @@ public class ProfileFragment extends Fragment {
         // Find the home and contacts ImageView and set the click listener
         ImageView navHome = view.findViewById(R.id.navHome);
         navHome.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new HomeFragment());
             transaction.addToBackStack(null);
@@ -41,6 +47,12 @@ public class ProfileFragment extends Fragment {
 
         ImageView navContacts = view.findViewById(R.id.navContacts);
         navContacts.setOnClickListener(v -> {
+            // Change alpha for feedback
+            v.setAlpha(0.5f);
+
+            // Reset alpha after a short delay
+            v.postDelayed(() -> v.setAlpha(1.0f), 200);
+
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, new ContactsFragment());
             transaction.addToBackStack(null);
@@ -51,7 +63,7 @@ public class ProfileFragment extends Fragment {
         ImageView profileImageView = view.findViewById(R.id.ivThumbnail);
         TextView dogNameTextView = view.findViewById(R.id.textViewDogName);
         TextView dogBreedTextView = view.findViewById(R.id.textViewDogBreed);
-        CardView dogProfileCard = view.findViewById(R.id.cardDogProfile); // Make sure to add this ID in your XML
+        CardView dogProfileCard = view.findViewById(R.id.cardDogProfile); // Ensure the ID exists in XML
 
         // Retrieve data from ViewModel
         RegistrationViewModel viewModel = new ViewModelProvider(requireActivity()).get(RegistrationViewModel.class);
@@ -71,10 +83,10 @@ public class ProfileFragment extends Fragment {
             profileImageView.setImageURI(Uri.parse(profileImageUri));
         }
 
-        // Set click listener for the card
+        // Set click listener for the card (just navigate to ProfileDetailsFragment without passing data)
         dogProfileCard.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragment_container, ProfileDetailsFragment.newInstance(dogName, dogBreed));
+            transaction.replace(R.id.fragment_container, new ProfileDetailsFragment());
             transaction.addToBackStack(null);
             transaction.commit();
         });
