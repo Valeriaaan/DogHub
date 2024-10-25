@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "78787459296",
+    "project_id": "doghub-86d2c",
+    "storage_bucket": "doghub-86d2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78787459296:android:85f2c8a833682510e67885",
+        "android_client_info": {
+          "package_name": "com.example.pethub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5zFiPlvmCG_eAlrlvVMzC21na3nz7dE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78787459296:android:b10f218ee2457cc1e67885",
+        "android_client_info": {
+          "package_name": "com.example.pethub.view"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5zFiPlvmCG_eAlrlvVMzC21na3nz7dE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
