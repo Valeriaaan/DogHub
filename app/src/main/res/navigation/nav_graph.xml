@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/splashScreenFragment">
+
+    <!-- Splash Screen Fragment -->
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.pethub.view.SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splash_to_view_holder"
+            app:destination="@id/viewHolderFragment" />
+    </fragment>
+
+    <!-- Registration Fragment 1 -->
+    <fragment
+        android:id="@+id/registerStepOneFragment"
+        android:name="com.example.pethub.view.register.RegisterStepOneFragment"
+        tools:layout="@layout/fragment_register_step_one">
+    </fragment>
+
+    <!-- Registration Fragment 2 -->
+    <fragment
+        android:id="@+id/registerStepTwoFragment"
+        android:name="com.example.pethub.view.register.RegisterStepTwoFragment"
+        tools:layout="@layout/fragment_register_step_two">
+    </fragment>
+
+    <!-- ViewHolderFragment -->
+    <fragment
+        android:id="@+id/viewHolderFragment"
+        android:name="com.example.pethub.view.ViewHolderFragment"
+        tools:layout="@layout/fragment_view_holder">
+    </fragment>
+
+    <!-- Sub Fragments inside ViewHolderFragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pethub.view.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.example.pethub.view.contacts.ContactsFragment"
+        tools:layout="@layout/fragment_contacts" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.pethub.view.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactsDetailsFragment"
+        android:name="com.example.pethub.view.contacts.ContactDetailsFragment"
+        tools:layout="@layout/fragment_contacts" />
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.example.pethub.view.profile.ProfileDetailsFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

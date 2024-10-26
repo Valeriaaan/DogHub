@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:src="@drawable/logo_doghub"
         app:layout_constraintBottom_toBottomOf="parent"
