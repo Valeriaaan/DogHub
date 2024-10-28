@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -29,10 +30,15 @@ public class SplashScreenFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Navigate to ViewHolderFragment after a delay
         new Handler().postDelayed(() -> {
             NavController navController = NavHostFragment.findNavController(this);
-            navController.navigate(R.id.action_splash_to_view_holder);
+
+            NavOptions navOptions = new NavOptions.Builder()
+                    .setPopUpTo(R.id.splashScreenFragment, true)
+                    .build();
+
+            // Navigate to ViewHolderFragment with the options
+            navController.navigate(R.id.action_splash_to_view_holder, null, navOptions);
         }, SPLASH_DURATION);
     }
 }

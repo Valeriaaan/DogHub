@@ -58,22 +58,14 @@
             app:layout_constraintTop_toBottomOf="@+id/contactTextView">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextViewL"
+                android:id="@+id/editTextLastVaccination"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:hint="Enter Latest Vaccination Date"
-                android:inputType="phone"
-                android:lines="1"
-                android:maxLines="1"
-                android:maxLength="11"
-                android:scrollbars="horizontal"
-                android:singleLine="true"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="2dp" />
+                android:hint="Select Latest Vaccination Date"
+                android:focusable="false"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/firstNameTextView"
@@ -89,7 +81,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/municipality"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -98,13 +90,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/firstNameTextView">
 
-            <AutoCompleteTextView
-                android:id="@+id/tvMunicipality"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNextVaccination"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:hint="Enter Next Due Date of Vaccination"
-                android:inputType="text"
-                android:padding="16dp" />
+                android:hint="Select Next Due Date of Vaccination"
+                android:focusable="false"
+                android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,7 +114,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/brgy_type_input_layout"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -131,17 +123,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lastNameTextView">
 
-            <AutoCompleteTextView
-                android:id="@+id/tvBrgy"
-                android:inputType="text"
-                android:layout_height="56dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextClinic"
                 android:layout_width="match_parent"
+                android:layout_height="56dp"
                 android:hint="Enter your dog's Vet Clinic"
-                android:padding="16dp" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFinish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:backgroundTint="@color/primary_main_color"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Finish"
+            android:textColor="@color/primary_light_color"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/brgy_type_input_layout" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

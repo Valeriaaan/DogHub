@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context=".view.OnBoardingFragment">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_doghub"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome to DogHub!"
+        android:textColor="@color/primary_main_color"
+        android:textSize="32sp"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="@dimen/dimen_20dp"
+        android:gravity="center"
+        android:text="Dog-Hub is your go-to companion for everything you need to care for your dog"
+        android:textColor="#9C9C9C"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_medium"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/primary_main_color"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Get Started"
+        android:textColor="@color/primary_light_color"
+        app:cornerRadius="10dp" />
+
+</LinearLayout>

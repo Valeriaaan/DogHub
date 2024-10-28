@@ -2,65 +2,40 @@ package com.example.pethub.view.register;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.pethub.R;
+import com.example.pethub.databinding.FragmentRegisterStepTwoBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RegisterStepTwoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RegisterStepTwoFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentRegisterStepTwoBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public RegisterStepTwoFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RegisterStepTwoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RegisterStepTwoFragment newInstance(String param1, String param2) {
-        RegisterStepTwoFragment fragment = new RegisterStepTwoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentRegisterStepTwoBinding.inflate(inflater, container, false);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register_step_two, container, false);
+        binding.buttonNext.setOnClickListener(v -> {
+            String healthConcern = binding.editTextHealthConcern.getText().toString().trim();
+            String medication = binding.editTextMedication.getText().toString().trim();
+            String surgery = binding.editTextSurgery.getText().toString().trim();
+
+            if (healthConcern.isEmpty() || medication.isEmpty() || surgery.isEmpty()) {
+                Toast.makeText(requireContext(), "All fields are required", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            ((RegisterFragment) getParentFragment()).setStepTwoData(healthConcern, medication, surgery);
+        });
+
+        return binding.getRoot();
     }
 }

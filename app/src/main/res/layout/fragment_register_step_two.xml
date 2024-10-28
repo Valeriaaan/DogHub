@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_black"
-            android:text="Heath Concerns"
+            android:text="Health Concerns"
             android:textColor="@color/text_dark_color"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Enter any Health Concern that your dog may be experiencing. Leave it blank if here are none."
+            android:text="Enter any Health Concern that your dog may be experiencing. Leave it blank if there are none."
             android:textColor="#666666"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,10 +61,10 @@
                 android:id="@+id/editTextHealthConcern"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:hint="Enter Health concern"
+                android:hint="Enter health concern"
                 android:lines="1"
                 android:maxLines="1"
-                android:maxLength="11"
+                android:maxLength="50"
                 android:scrollbars="horizontal"
                 android:singleLine="true"
                 app:boxStrokeWidth="1dp"
@@ -72,7 +72,99 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Medication Field -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/medicationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="Medication"
+            android:textSize="16sp"
+            android:textColor="@color/text_dark_color"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ContactNumber" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/medicationInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medicationTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextMedication"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Enter medication being taken"
+                android:lines="1"
+                android:maxLines="1"
+                android:maxLength="50"
+                android:scrollbars="horizontal"
+                android:singleLine="true"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Surgery Field -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/surgeryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="Surgery"
+            android:textSize="16sp"
+            android:textColor="@color/text_dark_color"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medicationInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/surgeryInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/surgeryTextView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextSurgery"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Enter number of surgery"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLines="1"
+                android:maxLength="50"
+                android:scrollbars="horizontal"
+                android:singleLine="true"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:backgroundTint="@color/primary_main_color"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Next"
+            android:textColor="@color/primary_light_color"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/surgeryInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

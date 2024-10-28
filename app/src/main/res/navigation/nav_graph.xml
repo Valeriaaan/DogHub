@@ -14,32 +14,68 @@
             app:destination="@id/viewHolderFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.pethub.view.OnBoardingFragment"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <!-- Registration Fragment  -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.pethub.view.register.RegisterFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerStepTwoFragment_to_viewHolderFragment"
+            app:destination="@id/viewHolderFragment" />
+    </fragment>
+
     <!-- Registration Fragment 1 -->
     <fragment
         android:id="@+id/registerStepOneFragment"
         android:name="com.example.pethub.view.register.RegisterStepOneFragment"
-        tools:layout="@layout/fragment_register_step_one">
-    </fragment>
+        tools:layout="@layout/fragment_register_step_one" />
 
     <!-- Registration Fragment 2 -->
     <fragment
         android:id="@+id/registerStepTwoFragment"
         android:name="com.example.pethub.view.register.RegisterStepTwoFragment"
-        tools:layout="@layout/fragment_register_step_two">
-    </fragment>
+        tools:layout="@layout/fragment_register_step_two" />
 
     <!-- ViewHolderFragment -->
     <fragment
         android:id="@+id/viewHolderFragment"
         android:name="com.example.pethub.view.ViewHolderFragment"
         tools:layout="@layout/fragment_view_holder">
+        <action
+            android:id="@+id/action_viewHolderFragment_to_registerStepOneFragment"
+            app:destination="@id/registerFragment" />
+
+        <action
+            android:id="@+id/action_viewHolderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <action
+            android:id="@+id/action_viewHolderFragment_to_healthFragment"
+            app:destination="@id/healthFragment" />
+
+        <action
+            android:id="@+id/action_viewHolderFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+
+        <action
+            android:id="@+id/action_viewHolderFragment_to_nutritionFragment"
+            app:destination="@id/nutritionFragment" />
     </fragment>
 
     <!-- Sub Fragments inside ViewHolderFragment -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.pethub.view.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/contactsFragment"
         android:name="com.example.pethub.view.contacts.ContactsFragment"
@@ -47,11 +83,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.pethub.view.profile.ProfileFragment"
-        tools:layout="@layout/fragment_profile">
-        <action
-            android:id="@+id/action_profileFragment_to_profileDetailsFragment"
-            app:destination="@id/profileDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/contactsDetailsFragment"
@@ -61,5 +93,18 @@
         android:id="@+id/profileDetailsFragment"
         android:name="com.example.pethub.view.profile.ProfileDetailsFragment"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/healthFragment"
+        android:name="com.example.pethub.view.home.HealthFragment"
+        tools:layout="@layout/fragment_health" />
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.example.pethub.view.home.ExerciseFragment"
+        tools:layout="@layout/fragment_exercise" />
+    <fragment
+        android:id="@+id/nutritionFragment"
+        android:name="com.example.pethub.view.home.NutritionFragment"
+        tools:layout="@layout/fragment_nutrition" />
 
 </navigation>

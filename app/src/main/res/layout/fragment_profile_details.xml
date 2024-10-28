@@ -7,13 +7,45 @@
     android:background="@color/background_color"
     tools:context=".view.profile.ProfileDetailsFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_dimen"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/dimen_30dp"
+            android:background="@color/primary_main_color"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/icon_back"
+                app:tint="@color/text_light_color" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:handwritingBoundsOffsetTop="10dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         android:paddingBottom="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +54,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="164dp"
+                android:layout_height="70dp"
                 android:background="@color/primary_main_color"
                 android:scaleType="centerCrop"
                 android:tileMode="disabled"
@@ -35,7 +67,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen_20dp"
-                android:layout_marginTop="96dp"
                 android:layout_marginBottom="@dimen/dimen_20dp"
                 android:backgroundTint="@color/background_color"
                 app:cardCornerRadius="100dp"
@@ -50,7 +81,7 @@
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imgUserProfile"
+                        android:id="@+id/imgDogProfile"
                         android:layout_width="148dp"
                         android:layout_height="148dp"
                         android:layout_gravity="center_horizontal"
@@ -104,7 +135,7 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/icon_back"
+                                android:src="@drawable/icon_paw"
                                 app:tint="@color/primary_main_color" />
 
                         </androidx.cardview.widget.CardView>
@@ -290,7 +321,7 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/icon_back"
+                                android:src="@drawable/icon_medical"
                                 app:tint="@color/primary_main_color" />
 
                         </androidx.cardview.widget.CardView>
@@ -342,7 +373,7 @@
                                 android:textSize="@dimen/dimen_16sp" />
 
                             <TextView
-                                android:id="@+id/textViewVaccinationDate"
+                                android:id="@+id/textViewLastVaccination"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_medium"
@@ -369,7 +400,7 @@
                                 android:textSize="@dimen/dimen_16sp" />
 
                             <TextView
-                                android:id="@+id/textViewNextDueDate"
+                                android:id="@+id/textViewNextVaccination"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_medium"
@@ -397,12 +428,14 @@
 
                             <TextView
                                 android:id="@+id/textViewClinic"
-                                android:layout_width="wrap_content"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_medium"
                                 android:text="Wagging Tails Animal Clinic"
                                 android:textColor="@color/text_dark_color"
-                                android:textSize="@dimen/dimen_16sp" />
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textAlignment="textEnd"
+                                android:maxLines="3" />
 
                         </LinearLayout>
 
@@ -422,7 +455,8 @@
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardVaccination">
+                app:layout_constraintTop_toBottomOf="@id/cardVaccination"
+                app:layout_constraintBottom_toBottomOf="parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -449,7 +483,7 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/icon_back"
+                                android:src="@drawable/icon_medical"
                                 app:tint="@color/primary_main_color" />
 
                         </androidx.cardview.widget.CardView>
@@ -534,7 +568,9 @@
                                 android:fontFamily="@font/roboto_medium"
                                 android:text="Anti-Allergy"
                                 android:textColor="@color/text_dark_color"
-                                android:textSize="@dimen/dimen_16sp" />
+                                android:textSize="@dimen/dimen_16sp"
+                                android:textAlignment="textEnd"
+                                android:maxLines="3" />
 
                         </LinearLayout>
 

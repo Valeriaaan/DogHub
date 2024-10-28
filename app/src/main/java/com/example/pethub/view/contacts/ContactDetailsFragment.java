@@ -2,65 +2,63 @@ package com.example.pethub.view.contacts;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.pethub.R;
+import com.example.pethub.databinding.FragmentContactDetailsBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ContactDetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ContactDetailsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentContactDetailsBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ContactDetailsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ContactDetailsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ContactDetailsFragment newInstance(String param1, String param2) {
-        ContactDetailsFragment fragment = new ContactDetailsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentContactDetailsBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        // Get the data from arguments
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            String name = getArguments().getString("name");
+            String veterinarian = getArguments().getString("veterinarian");
+            String address = getArguments().getString("address");
+            String contact = getArguments().getString("contact");
+            String picture = getArguments().getString("picture");
+
+            // Set data to the views using binding
+            binding.textViewClinicName.setText(name);
+            binding.textViewVeterinarian.setText(!TextUtils.isEmpty(veterinarian) ? veterinarian : "Unknown");
+            binding.textViewAddress.setText(!TextUtils.isEmpty(address) ? address : "Unknown");
+            binding.textViewContact.setText(!TextUtils.isEmpty(contact) ? contact : "Unknown");
+
+            // Use Glide to load the image or show a placeholder if empty
+            Glide.with(this)
+                    .load(!TextUtils.isEmpty(picture) ? picture : R.drawable.img_image_placeholder)
+                    .placeholder(R.drawable.img_image_placeholder) // Display while loading
+                    .error(R.drawable.img_image_placeholder) // Display if loading fails
+                    .into(binding.imgUserProfile);
         }
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        return view;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact_details, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // Prevent memory leaks
     }
 }
