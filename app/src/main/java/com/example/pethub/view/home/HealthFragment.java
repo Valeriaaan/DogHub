@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -26,12 +28,33 @@ public class HealthFragment extends Fragment {
         binding = FragmentHealthBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requireActivity().getSupportFragmentManager().popBackStack();
-            }
+        binding.backButton.setOnClickListener(v -> requireActivity().getSupportFragmentManager().popBackStack());
+
+        binding.routineCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HealthFragment.this);
+            navController.navigate(R.id.action_healthFragment_to_healthRoutineCheckUpsFragment);
         });
+
+        binding.HealthIssueCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HealthFragment.this);
+            navController.navigate(R.id.action_healthFragment_to_healthCommonIssuesFragment);
+        });
+
+        binding.GroomingCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HealthFragment.this);
+            navController.navigate(R.id.action_healthFragment_to_healthGroomingFragment);
+        });
+
+        binding.ParasiteCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HealthFragment.this);
+            navController.navigate(R.id.action_healthFragment_to_healthMentalEnrichmentFragment);
+        });
+
+        binding.SignHealthyDogView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HealthFragment.this);
+            navController.navigate(R.id.action_healthFragment_to_healthSignsHealthyFragment);
+        });
+
         return view;
     }
 

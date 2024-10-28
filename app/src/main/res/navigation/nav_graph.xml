@@ -33,13 +33,11 @@
             app:destination="@id/viewHolderFragment" />
     </fragment>
 
-    <!-- Registration Fragment 1 -->
     <fragment
         android:id="@+id/registerStepOneFragment"
         android:name="com.example.pethub.view.register.RegisterStepOneFragment"
         tools:layout="@layout/fragment_register_step_one" />
 
-    <!-- Registration Fragment 2 -->
     <fragment
         android:id="@+id/registerStepTwoFragment"
         android:name="com.example.pethub.view.register.RegisterStepTwoFragment"
@@ -94,17 +92,137 @@
         android:name="com.example.pethub.view.profile.ProfileDetailsFragment"
         tools:layout="@layout/fragment_profile" />
 
+    <!-- HealthFragment -->
     <fragment
         android:id="@+id/healthFragment"
         android:name="com.example.pethub.view.home.HealthFragment"
-        tools:layout="@layout/fragment_health" />
+        tools:layout="@layout/fragment_health">
+
+        <!-- Actions to Health sub-fragments -->
+        <action
+            android:id="@+id/action_healthFragment_to_healthCommonIssuesFragment"
+            app:destination="@id/healthCommonIssuesFragment" />
+        <action
+            android:id="@+id/action_healthFragment_to_healthGroomingFragment"
+            app:destination="@id/healthGroomingFragment" />
+        <action
+            android:id="@+id/action_healthFragment_to_healthMentalEnrichmentFragment"
+            app:destination="@id/healthMentalEnrichmentFragment" />
+        <action
+            android:id="@+id/action_healthFragment_to_healthRoutineCheckUpsFragment"
+            app:destination="@id/healthRoutineCheckUpsFragment" />
+        <action
+            android:id="@+id/action_healthFragment_to_healthSignsHealthyFragment"
+            app:destination="@id/healthSignsHealthyFragment" />
+    </fragment>
+
+    <!-- Health Sub-fragments -->
+    <fragment
+        android:id="@+id/healthCommonIssuesFragment"
+        android:name="com.example.pethub.view.home.health.HealthCommonIssuesFragment"
+        tools:layout="@layout/fragment_health_common_issues" />
+    <fragment
+        android:id="@+id/healthGroomingFragment"
+        android:name="com.example.pethub.view.home.health.HealthGroomingFragment"
+        tools:layout="@layout/fragment_health_grooming" />
+    <fragment
+        android:id="@+id/healthMentalEnrichmentFragment"
+        android:name="com.example.pethub.view.home.health.HealthMentalEnrichmentFragment"
+        tools:layout="@layout/fragment_health_mental_enrichment" />
+    <fragment
+        android:id="@+id/healthRoutineCheckUpsFragment"
+        android:name="com.example.pethub.view.home.health.HealthRoutineCheckUpsFragment"
+        tools:layout="@layout/fragment_health_routine_checkups" />
+    <fragment
+        android:id="@+id/healthSignsHealthyFragment"
+        android:name="com.example.pethub.view.home.health.HealthSignsHealthyFragment"
+        tools:layout="@layout/fragment_health_signs_healthy" />
+
+
+    <!-- ExerciseFragment -->
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.pethub.view.home.ExerciseFragment"
-        tools:layout="@layout/fragment_exercise" />
+        tools:layout="@layout/fragment_exercise">
+
+        <!-- Actions to Exercise sub-fragments -->
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseAgeFragment"
+            app:destination="@id/exerciseAgeFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseBreedFragment"
+            app:destination="@id/exerciseBreedFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseIndoorFragment"
+            app:destination="@id/exerciseIndoorFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseSignsFragment"
+            app:destination="@id/exerciseSignsFragment" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_exerciseTypesFragment"
+            app:destination="@id/exerciseTypesFragment" />
+    </fragment>
+
+    <!-- Exercise Sub-fragments -->
+    <fragment
+        android:id="@+id/exerciseAgeFragment"
+        android:name="com.example.pethub.view.home.exercise.ExerciseAgeFragment"
+        tools:layout="@layout/fragment_exercise_age" />
+    <fragment
+        android:id="@+id/exerciseBreedFragment"
+        android:name="com.example.pethub.view.home.exercise.ExerciseBreedFragment"
+        tools:layout="@layout/fragment_exercise_breed" />
+    <fragment
+        android:id="@+id/exerciseIndoorFragment"
+        android:name="com.example.pethub.view.home.exercise.ExerciseIndoorFragment"
+        tools:layout="@layout/fragment_exercise_indoor" />
+    <fragment
+        android:id="@+id/exerciseSignsFragment"
+        android:name="com.example.pethub.view.home.exercise.ExerciseSignsFragment"
+        tools:layout="@layout/fragment_exercise_signs" />
+    <fragment
+        android:id="@+id/exerciseTypesFragment"
+        android:name="com.example.pethub.view.home.exercise.ExerciseTypesFragment"
+        tools:layout="@layout/fragment_exercise_types" />
+
+
+    <!-- NutritionFragment -->
     <fragment
         android:id="@+id/nutritionFragment"
         android:name="com.example.pethub.view.home.NutritionFragment"
-        tools:layout="@layout/fragment_nutrition" />
+        tools:layout="@layout/fragment_nutrition">
+
+        <!-- Actions to Nutrition sub-fragments -->
+        <action
+            android:id="@+id/action_nutritionFragment_to_nutritionHomemadeFragment"
+            app:destination="@id/nutritionHomemadeFragment" />
+        <action
+            android:id="@+id/action_nutritionFragment_to_nutritionRecommendedFragment"
+            app:destination="@id/nutritionRecommendedFragment" />
+        <action
+            android:id="@+id/action_nutritionFragment_to_nutritionTreatsFragment"
+            app:destination="@id/nutritionTreatsFragment" />
+        <action
+            android:id="@+id/action_nutritionFragment_to_nutritionTypesFragment"
+            app:destination="@id/nutritionTypesFragment" />
+    </fragment>
+
+    <!-- Nutrition Sub-fragments -->
+    <fragment
+        android:id="@+id/nutritionHomemadeFragment"
+        android:name="com.example.pethub.view.home.nutrition.NutritionHomemadeFragment"
+        tools:layout="@layout/fragment_nutrition_homemade" />
+    <fragment
+        android:id="@+id/nutritionRecommendedFragment"
+        android:name="com.example.pethub.view.home.nutrition.NutritionRecommendedFragment"
+        tools:layout="@layout/fragment_nutrition_recommended" />
+    <fragment
+        android:id="@+id/nutritionTreatsFragment"
+        android:name="com.example.pethub.view.home.nutrition.NutritionTreatsFragment"
+        tools:layout="@layout/fragment_nutrition_treats" />
+    <fragment
+        android:id="@+id/nutritionTypesFragment"
+        android:name="com.example.pethub.view.home.nutrition.NutritionTypesFragment"
+        tools:layout="@layout/fragment_nutrition_types" />
 
 </navigation>

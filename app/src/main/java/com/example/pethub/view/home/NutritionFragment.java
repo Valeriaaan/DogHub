@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,12 +26,28 @@ public class NutritionFragment extends Fragment {
         binding = FragmentNutritionBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requireActivity().getSupportFragmentManager().popBackStack();
-            }
+        binding.backButton.setOnClickListener(v -> requireActivity().getSupportFragmentManager().popBackStack());
+
+        binding.RecommendedCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(NutritionFragment.this);
+            navController.navigate(R.id.action_nutritionFragment_to_nutritionRecommendedFragment);
         });
+
+        binding.PortionSizeCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(NutritionFragment.this);
+            navController.navigate(R.id.action_nutritionFragment_to_nutritionTypesFragment);
+        });
+
+        binding.Treats.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(NutritionFragment.this);
+            navController.navigate(R.id.action_nutritionFragment_to_nutritionTreatsFragment);
+        });
+
+        binding.HomamadeDogFoodGuidelines.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(NutritionFragment.this);
+            navController.navigate(R.id.action_nutritionFragment_to_nutritionHomemadeFragment);
+        });
+
         return view;
     }
 

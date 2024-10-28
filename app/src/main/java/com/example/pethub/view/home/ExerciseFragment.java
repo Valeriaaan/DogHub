@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,12 +26,33 @@ public class ExerciseFragment extends Fragment {
         binding = FragmentExerciseBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requireActivity().getSupportFragmentManager().popBackStack();
-            }
+        binding.backButton.setOnClickListener(v -> requireActivity().getSupportFragmentManager().popBackStack());
+
+        binding.ExerciseAgeCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(ExerciseFragment.this);
+            navController.navigate(R.id.action_exerciseFragment_to_exerciseAgeFragment);
         });
+
+        binding.ExerciseBreedCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(ExerciseFragment.this);
+            navController.navigate(R.id.action_exerciseFragment_to_exerciseBreedFragment);
+        });
+
+        binding.TypesExerciseCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(ExerciseFragment.this);
+            navController.navigate(R.id.action_exerciseFragment_to_exerciseTypesFragment);
+        });
+
+        binding.IndoorExerciseCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(ExerciseFragment.this);
+            navController.navigate(R.id.action_exerciseFragment_to_exerciseIndoorFragment);
+        });
+
+        binding.LittleExerciseCardView.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(ExerciseFragment.this);
+            navController.navigate(R.id.action_exerciseFragment_to_exerciseSignsFragment);
+        });
+
         return view;
     }
 

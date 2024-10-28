@@ -64,7 +64,7 @@
 
             <!--RECOMMENDED DIET BY AGE-->
             <androidx.cardview.widget.CardView
-                android:id="@+id/RoutineCardView"
+                android:id="@+id/routineCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_20dp"
@@ -124,7 +124,7 @@
                 app:cardElevation="2dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/RoutineCardView">
+                app:layout_constraintTop_toBottomOf="@+id/routineCardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"

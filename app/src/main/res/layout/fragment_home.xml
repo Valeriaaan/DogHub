@@ -73,7 +73,7 @@
                     android:layout_height="72dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginHorizontal="2dp"
-                    android:backgroundTint="#F8F5F0"
+                    android:backgroundTint="#FFFFFF"
                     android:elevation="@dimen/cardview_compat_inset_shadow"
                     app:cardCornerRadius="12dp">
 
@@ -82,14 +82,14 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <pl.droidsonroids.gif.GifImageView
                             android:id="@+id/imageViewProfile"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginStart="10dp"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp"
-                            android:src="@drawable/img_image_placeholder"
+                            android:src="@drawable/gif_bell"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -101,7 +101,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Welcome!"
+                            android:text="Alert Title"
                             android:textColor="@color/primary_dark_color"
                             android:textSize="12sp"
                             app:layout_constraintBottom_toTopOf="@+id/textViewUser"
@@ -115,7 +115,7 @@
                             android:layout_marginStart="8dp"
                             android:elevation="@dimen/dimen_10dp"
                             android:fontFamily="@font/roboto_black"
-                            android:text="Ben T. Lador"
+                            android:text="01:00 - 12:00"
                             android:textColor="@color/text_dark_color"
                             android:textSize="16sp"
                             app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
