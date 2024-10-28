@@ -2,6 +2,8 @@ package com.example.pethub.view.home.nutrition;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,16 +11,28 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pethub.R;
+import com.example.pethub.databinding.FragmentHealthSignsHealthyBinding;
 import com.example.pethub.databinding.FragmentNutritionBinding;
+import com.example.pethub.databinding.FragmentNutritionHomemadeBinding;
 
 public class NutritionHomemadeFragment extends Fragment {
 
-    private FragmentNutritionBinding binding;
+    private FragmentNutritionHomemadeBinding binding;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentNutritionHomemadeBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        binding.backButton.setOnClickListener(v -> requireActivity().getSupportFragmentManager().popBackStack());
+
+        return view;
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nutrition_homemade, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // Prevent memory leaks
     }
 }
