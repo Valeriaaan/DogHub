@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".view.home.nutrition.NutritionHomemadeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_dimen"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/dimen_30dp"
+            android:background="@color/primary_main_color"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Homemade Dog Food"
+                android:textColor="@color/text_light_color"
+                android:textSize="22sp" />
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/icon_back"
+                app:tint="@color/text_light_color" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:handwritingBoundsOffsetTop="10dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chicken_rice_recipe_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Recipe 1: Chicken and Rice"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredients:\n• 1 cup of cooked chicken (protein)\n• ½ cup of cooked rice (carbohydrate)\n• ¼ cup of mixed vegetables (carrots, peas, or green beans) (fiber)\n• 1 teaspoon of fish oil (healthy fats)"
+                        android:textSize="16sp"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Instructions:\n1. Cook the chicken thoroughly (boil or bake) and shred it into small pieces.\n2. Cook the rice according to package instructions.\n3. Steam or boil the vegetables until soft.\n4. Mix the chicken, rice, and vegetables in a bowl.\n5. Add fish oil and stir to combine.\n6. Allow to cool before serving to your dog."
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/beef_sweet_potato_recipe_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chicken_rice_recipe_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Recipe 2: Beef and Sweet Potato"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredients:\n• 1 cup of ground beef (protein)\n• 1 cup of sweet potato, cooked and mashed (carbohydrate)\n• ½ cup of spinach, chopped (fiber)\n• 1 teaspoon of olive oil (healthy fats)"
+                        android:textSize="16sp"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Instructions:\n1. Brown the ground beef in a skillet until fully cooked; drain any excess fat.\n2. Cook the sweet potato until soft, then mash it.\n3. Add the chopped spinach to the beef and cook for an additional 2-3 minutes until wilted.\n4. Mix in the mashed sweet potato and olive oil.\n5. Let it cool before serving."
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/egg_potato_recipe_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/beef_sweet_potato_recipe_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Recipe 3: Egg and Potato"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ingredients:\n• 2 large eggs (protein)\n• 1 medium potato, cooked and diced (carbohydrate)\n• ¼ cup of spinach, chopped (fiber) (can use frozen spinach)\n• 1 teaspoon of vegetable oil (healthy fats)"
+                        android:textSize="16sp"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Instructions:\n1. Boil or steam the potato until tender, then dice it.\n2. In a skillet, heat the vegetable oil over medium heat.\n3. Scramble the eggs in the skillet until fully cooked.\n4. Add the diced potato and chopped spinach to the skillet, mixing everything together until the spinach is wilted.\n5. Allow to cool before serving."
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/reminders_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="16dp"
+                app:contentPadding="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/egg_potato_recipe_card"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reminders:"
+                        android:textColor="@color/primary_main_color"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Variety of Proteins: Rotate between different protein sources (chicken, beef, turkey, fish) to provide a range of nutrients.\n• Carbohydrate Sources: Use a mix of carbohydrates (rice, sweet potato, quinoa) to ensure a balanced energy source.\n• Vegetables: Include a variety of vegetables (carrots, peas, spinach) for vitamins and minerals. Avoid toxic vegetables like onions and garlic.\n• Healthy Fats: Incorporate healthy fats like fish oil or olive oil for omega-3 and omega-6 fatty acids, which are essential for skin and coat health.\n• Vitamin Supplements: Consult with a veterinarian to determine if additional vitamin supplements are necessary, especially for calcium, vitamin A, and vitamin D.\n• Portion Control: Adjust portion sizes based on your dog's size, activity level, and specific dietary needs.\n• Avoid Additives: Do not include harmful ingredients like chocolate, grapes, raisins, onions, or garlic in your recipes.\n• Consult Your Vet: Before making significant changes to your dog's diet, consult with a veterinarian to ensure that all nutritional needs are met."
+                        android:textSize="16sp"
+                        android:paddingBottom="16dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
