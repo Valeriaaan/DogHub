@@ -82,10 +82,11 @@
 
                     <ImageView
                         android:id="@+id/RoutineIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
+                        android:layout_width="64dp"
+                        android:layout_margin="@dimen/dimen_20dp"
+                        android:layout_height="64dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
+                        android:src="@drawable/img_routine_check_ups" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -133,10 +134,11 @@
 
                     <ImageView
                         android:id="@+id/HealthIssueIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
+                        android:layout_width="64dp"
+                        android:layout_margin="@dimen/dimen_20dp"
+                        android:layout_height="64dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
+                        android:src="@drawable/img_common_health_issues" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -184,10 +186,11 @@
 
                     <ImageView
                         android:id="@+id/GroomingIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
+                        android:layout_width="64dp"
+                        android:layout_margin="@dimen/dimen_20dp"
+                        android:layout_height="64dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
+                        android:src="@drawable/img_grooming" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -235,10 +238,11 @@
 
                     <ImageView
                         android:id="@+id/ParasiteIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
+                        android:layout_width="64dp"
+                        android:layout_margin="20dp"
+                        android:layout_height="64dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
+                        android:src="@drawable/img_mental_enrichment" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -287,10 +291,11 @@
 
                     <ImageView
                         android:id="@+id/SignHealthyDogIcon"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="20dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/img_image_placeholder" />
+                        android:src="@drawable/img_signs_healthy_dog" />
 
                     <LinearLayout
                         android:layout_width="0dp"

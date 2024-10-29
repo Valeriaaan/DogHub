@@ -169,7 +169,7 @@
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
                                 android:layout_gravity="center_vertical"
-                                android:src="@drawable/img_image_placeholder" />
+                                android:src="@drawable/img_dog_bowl" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -218,7 +218,7 @@
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
                                 android:layout_gravity="center_vertical"
-                                android:src="@drawable/img_image_placeholder" />
+                                android:src="@drawable/img_veterinarian" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -268,7 +268,7 @@
                                 android:layout_width="64dp"
                                 android:layout_height="64dp"
                                 android:layout_gravity="center_vertical"
-                                android:src="@drawable/img_image_placeholder" />
+                                android:src="@drawable/img_fetch" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
