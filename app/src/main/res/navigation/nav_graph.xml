@@ -74,6 +74,12 @@
         android:id="@+id/homeFragment"
         android:name="com.example.pethub.view.home.HomeFragment"
         tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.example.pethub.view.home.alarm.AlarmFragment"
+        tools:layout="@layout/fragment_alarm" />
+
     <fragment
         android:id="@+id/contactsFragment"
         android:name="com.example.pethub.view.contacts.ContactsFragment"
@@ -132,7 +138,7 @@
     <fragment
         android:id="@+id/healthRoutineCheckUpsFragment"
         android:name="com.example.pethub.view.home.health.HealthRoutineCheckUpsFragment"
-        tools:layout="@layout/fragment_health_routine_checkups" />
+        tools:layout="@layout/fragment_health_routine_check_ups" />
     <fragment
         android:id="@+id/healthSignsHealthyFragment"
         android:name="com.example.pethub.view.home.health.HealthSignsHealthyFragment"

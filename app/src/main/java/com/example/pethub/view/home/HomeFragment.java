@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import com.example.pethub.R;
 import com.google.android.material.card.MaterialCardView;
 
@@ -42,6 +44,7 @@ public class HomeFragment extends Fragment {
         CardView exerciseCard = view.findViewById(R.id.cardExercise);
         CardView nutritionCard = view.findViewById(R.id.cardNutrition);
         CardView heathCard = view.findViewById(R.id.cardHealth);
+        CardView cardProfile = view.findViewById(R.id.profileCard);
 
         exerciseCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,19 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Navigate to AlarmFragment when cardProfile is clicked
+        cardProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToAlarmFragment(v);
+            }
+        });
+
         return view;
+    }
+
+    private void navigateToAlarmFragment(View view) {
+        // Use Navigation component to navigate to AlarmFragment
+        Navigation.findNavController(view).navigate(R.id.alarmFragment);
     }
 }

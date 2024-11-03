@@ -31,7 +31,6 @@ public class ProfileFragment extends Fragment implements DogsAdapter.OnDogClickL
 
     private FloatingActionButton fabAddDog;
     private OnFabClickListener listener;
-
     private RecyclerView recyclerViewContacts;
     private DogsAdapter dogsAdapter;
     private final List<Dog> dogList = new ArrayList<>();
