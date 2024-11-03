@@ -6,9 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pethub.R;
+import com.example.pethub.adapter.ViewPagerAdapter;
 import com.example.pethub.model.Contact;
 import com.example.pethub.model.Dog;
 import com.example.pethub.view.contacts.ContactDetailsFragment;
@@ -33,23 +36,45 @@ public class ViewHolderFragment extends Fragment implements ProfileFragment.OnFa
     private BottomNavigationView bottomNavigationView;
     private final Map<Integer, Fragment> fragmentMap = new HashMap<>();
 
+    private ViewPager2 viewPager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view_holder, container, false);
 
         bottomNavigationView = view.findViewById(R.id.bottom_navigationUser);
+        viewPager = view.findViewById(R.id.viewPager);
 
         fragmentMap.put(R.id.navigation_home, new HomeFragment());
         fragmentMap.put(R.id.navigation_contact, new ContactsFragment());
         fragmentMap.put(R.id.navigation_profile, new ProfileFragment());
 
-        loadFragment(fragmentMap.get(R.id.navigation_home));
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        viewPager.setCurrentItem(0);
+
+        viewPager.setPageTransformer(new DepthPageTransformer());
+
+        // Set bottom navigation item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int position = 0;
+            // Using item ID to determine the position
+            if (item.getItemId() == R.id.navigation_contact) {
+                position = 1;
+            } else if (item.getItemId() == R.id.navigation_profile) {
+                position = 2;
+            }
+            viewPager.setCurrentItem(position, true); // Switch to the selected fragment
+            return true;
+        });
+
+        // Sync the ViewPager with the BottomNavigationView
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                Fragment selectedFragment = fragmentMap.get(item.getItemId());
-                return loadFragment(selectedFragment);
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                bottomNavigationView.getMenu().getItem(position).setChecked(true); // Update selected item
             }
         });
 

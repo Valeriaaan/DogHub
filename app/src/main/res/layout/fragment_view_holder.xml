@@ -8,8 +8,8 @@
     tools:context=".view.ViewHolderFragment">
 
     <!-- Fragment Container for child fragments -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigationUser"

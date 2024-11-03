@@ -74,7 +74,6 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnCont
                 contactList.clear();
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Contact contact = new Contact();
-
                     contact.setVetName(document.getString("name"));
                     contact.setVet(document.getString("veterinarian"));
                     contact.setVetContact(document.getString("contact"));
@@ -82,12 +81,14 @@ public class ContactsFragment extends Fragment implements ContactsAdapter.OnCont
                     contact.setVetPicture(document.getString("picture"));
 
                     contactList.add(contact);
-
-                    Log.d("ContactData", "Contact Name: " + contact.getVetName() + ", Adress: " + contact.getVetAddress());
+                    Log.d("ContactData", "Contact Name: " + contact.getVetName() + ", Address: " + contact.getVetAddress());
                 }
-                contactsAdapter.notifyDataSetChanged();
+                // Initialize the adapter after data is loaded
+                contactsAdapter = new ContactsAdapter(getContext(), contactList, this);
+                recyclerViewContacts.setAdapter(contactsAdapter);
+                contactsAdapter.notifyDataSetChanged(); // Notify the adapter of data changes
             } else {
-                // Handle the error
+                Log.e("ContactsFragment", "Error getting contacts: ", task.getException());
             }
         });
     }

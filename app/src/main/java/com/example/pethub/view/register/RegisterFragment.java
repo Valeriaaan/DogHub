@@ -47,7 +47,7 @@ public class RegisterFragment extends Fragment {
                         .setPopUpTo(R.id.registerFragment, true)
                         .build();
 
-                Navigation.findNavController(requireView()).navigate(R.id.action_registerStepTwoFragment_to_viewHolderFragment, null, navOptions);
+                Navigation.findNavController(requireView()).navigateUp();
             }
         });
     }

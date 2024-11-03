@@ -1,6 +1,7 @@
 package com.example.pethub.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,6 +91,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         contactList.clear();
         contactList.addAll(filteredList);
         notifyDataSetChanged();
+        Log.d("ContactsAdapter", "Filtered contacts count: " + contactList.size());
     }
 
     public interface OnContactClickListener {
