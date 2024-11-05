@@ -2,6 +2,7 @@ package com.example.pethub.view.profile;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -54,6 +56,8 @@ public class ProfileDetailsFragment extends Fragment {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_GALLERY_PICK = 2;
     private Uri imageUri;
+    private ProgressDialog progressDialog;
+
 
 
 
@@ -63,9 +67,14 @@ public class ProfileDetailsFragment extends Fragment {
         binding = FragmentProfileDetailsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        firestore = FirebaseFirestore.getInstance();
+        // Initialize ProgressDialog
+        progressDialog = new ProgressDialog(requireContext());
+        progressDialog.setMessage("Uploading image...");
+        progressDialog.setCancelable(false); // Prevents canceling the dialog
 
+        firestore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
 
         if (getArguments() != null) {
             // Extract data from arguments
@@ -423,6 +432,10 @@ public class ProfileDetailsFragment extends Fragment {
 
     private void uploadImageToFirebase(Uri imageUri) {
         if (imageUri != null) {
+            // Show loading dialog
+            progressDialog.show();
+            binding.getRoot().setClickable(false); // Disable user interaction
+
             StorageReference fileReference = storageReference.child("images/" + System.currentTimeMillis() + ".jpg");
             fileReference.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
                 fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
@@ -432,6 +445,8 @@ public class ProfileDetailsFragment extends Fragment {
                 });
             }).addOnFailureListener(e -> {
                 Toast.makeText(requireContext(), "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss(); // Dismiss loading dialog
+                binding.getRoot().setClickable(true); // Re-enable user interaction
             });
         } else {
             Toast.makeText(requireContext(), "No image selected", Toast.LENGTH_SHORT).show();
@@ -450,20 +465,24 @@ public class ProfileDetailsFragment extends Fragment {
         query.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    // Assuming the document ID is the unique identifier for the dog profile
                     String dogId = document.getId();
-                    // Update the dog profile with the new image URL
                     firestore.collection("dogs").document(dogId)
                             .update("dogPicture", imageUrl) // Assuming the field name is "dogPicture"
                             .addOnSuccessListener(aVoid -> {
                                 Log.d(TAG, "Image URL updated successfully: " + imageUrl);
+                                progressDialog.dismiss(); // Dismiss loading dialog
+                                binding.getRoot().setClickable(true); // Re-enable user interaction
                             })
                             .addOnFailureListener(e -> {
                                 Log.e(TAG, "Error updating image URL", e);
+                                progressDialog.dismiss(); // Dismiss loading dialog
+                                binding.getRoot().setClickable(true); // Re-enable user interaction
                             });
                 }
             } else {
                 Log.e(TAG, "Error getting documents: ", task.getException());
+                progressDialog.dismiss(); // Dismiss loading dialog
+                binding.getRoot().setClickable(true); // Re-enable user interaction
             }
         });
     }

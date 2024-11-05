@@ -1,6 +1,7 @@
 package com.example.pethub.model;
 
 public class Dog {
+    private String documentId;
     private String name;
     private String breed;
     private String picture;
@@ -34,6 +35,13 @@ public class Dog {
 
     }
 
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
 
     // Getters and Setters...
 

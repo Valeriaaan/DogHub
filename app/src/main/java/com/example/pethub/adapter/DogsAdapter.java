@@ -1,14 +1,13 @@
 package com.example.pethub.adapter;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.pethub.R;
@@ -21,11 +20,13 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
     private final List<Dog> dogList;
     private final Context context;
     private final OnDogClickListener onDogClickListener;
+    private ItemTouchHelper itemTouchHelper;
 
-    public DogsAdapter(Context context, List<Dog> dogList, OnDogClickListener listener) {
+    public DogsAdapter(Context context, List<Dog> dogList, OnDogClickListener listener, ItemTouchHelper itemTouchHelper) {
         this.context = context;
         this.dogList = dogList;
         this.onDogClickListener = listener;
+        this.itemTouchHelper = this.itemTouchHelper;
     }
 
     @NonNull
@@ -41,7 +42,7 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
         holder.textViewDogName.setText(dog.getDogName());
         holder.textViewDogBreed.setText(dog.getDogBreed());
 
-        // Load the image with Glide and add a placeholder
+        // Load the image with Glide
         if (dog.getDogPicture() != null && !dog.getDogPicture().isEmpty()) {
             Glide.with(context).load(dog.getDogPicture())
                     .placeholder(R.drawable.img_image_placeholder)
@@ -54,6 +55,13 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
             if (onDogClickListener != null) {
                 onDogClickListener.onDogClick(dog);
             }
+        });
+
+        holder.itemView.setOnLongClickListener(v -> {
+            if (itemTouchHelper != null) {
+                itemTouchHelper.startDrag(holder);
+            }
+            return true;
         });
     }
 
@@ -77,4 +85,10 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
     public interface OnDogClickListener {
         void onDogClick(Dog dog);
     }
+
+    public void removeDog(int position) {
+        dogList.remove(position);
+        notifyItemRemoved(position);
+    }
+
 }
