@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.example.pethub.R;
 import com.example.pethub.databinding.FragmentContactDetailsBinding;
 
 public class ContactDetailsFragment extends Fragment {
+
 
     private FragmentContactDetailsBinding binding;
 
@@ -45,6 +48,15 @@ public class ContactDetailsFragment extends Fragment {
                     .placeholder(R.drawable.img_image_placeholder) // Display while loading
                     .error(R.drawable.img_image_placeholder) // Display if loading fails
                     .into(binding.imgUserProfile);
+
+            binding.textViewContact.setOnClickListener(v -> {
+                if (!TextUtils.isEmpty(contact) && !contact.equals("Unknown")) {
+                    // Create an intent to open the phone dialer with the number filled in
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:" + contact));
+                    startActivity(intent);
+                }
+            });
 
             // Make the address clickable
             binding.textViewAddress.setOnClickListener(v -> {
