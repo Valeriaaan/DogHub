@@ -32,6 +32,8 @@
         android:theme="@style/Theme.PetHub"
         tools:targetApi="31">
 
+        <receiver android:name=".adapter.DueDateNotificationReceiver" android:enabled="true" android:exported="false"/>
+
         <activity
 
             android:windowSoftInputMode="adjustNothing"
