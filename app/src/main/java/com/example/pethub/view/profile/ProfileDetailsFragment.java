@@ -32,6 +32,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.bumptech.glide.Glide;
 import android.Manifest;
 import com.example.pethub.R;
+import com.example.pethub.adapter.DueDateNotificationReceiver;
 import com.example.pethub.databinding.FragmentProfileDetailsBinding;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -44,8 +45,14 @@ import android.net.Uri;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 
 public class ProfileDetailsFragment extends Fragment {
 
@@ -214,12 +221,11 @@ public class ProfileDetailsFragment extends Fragment {
         EditText editTextNextDueDate = dialogView.findViewById(R.id.editTextNextDueDate);
         EditText editTextClinic = dialogView.findViewById(R.id.editTextClinic);
 
-        // Create the dialog
         MaterialAlertDialogBuilder dialogBuilder = new MaterialAlertDialogBuilder(requireContext())
                 .setTitle(title)
                 .setView(dialogView)
                 .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
-                .setPositiveButton("Save", null); // Set a placeholder for the positive button
+                .setPositiveButton("Save", null);
 
         AlertDialog dialog = dialogBuilder.create();
 
@@ -227,34 +233,58 @@ public class ProfileDetailsFragment extends Fragment {
             Button saveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
             if (saveButton != null) {
                 saveButton.setOnClickListener(v -> {
-                    // Handle saving data and validation
                     String vaccinationDate = editTextVaccinationDate.getText().toString().trim();
                     String nextDueDate = editTextNextDueDate.getText().toString().trim();
                     String clinic = editTextClinic.getText().toString().trim();
 
-                    // Validate input fields
-                    if (TextUtils.isEmpty(vaccinationDate) || TextUtils.isEmpty(nextDueDate) ||
-                            TextUtils.isEmpty(clinic)) {
-                        // Show error dialog or Toast
+                    if (TextUtils.isEmpty(vaccinationDate) || TextUtils.isEmpty(nextDueDate) || TextUtils.isEmpty(clinic)) {
                         new MaterialAlertDialogBuilder(requireContext())
                                 .setTitle("Error")
                                 .setMessage("All fields must be filled.")
                                 .setPositiveButton("OK", null)
                                 .show();
                     } else {
-                        // Save the vaccination history (implement your saving logic here)
                         updateVaccinationHistory(vaccinationDate, nextDueDate, clinic);
-                        dialog.dismiss(); // Dismiss dialog if data is saved successfully
+                        setNotificationForNextDueDate(nextDueDate); // Set up the notification
+                        dialog.dismiss();
                     }
                 });
             }
 
-            // Date Picker setup
             editTextVaccinationDate.setOnClickListener(v -> showDatePicker(editTextVaccinationDate));
             editTextNextDueDate.setOnClickListener(v -> showDatePicker(editTextNextDueDate));
         });
 
         dialog.show();
+    }
+
+    private void setNotificationForNextDueDate(String nextDueDate) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date nextDue = sdf.parse(nextDueDate);
+
+            if (nextDue != null) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(nextDue);
+
+                // Create an intent to trigger the notification receiver
+                Intent intent = new Intent(requireContext(), DueDateNotificationReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                        requireContext(),
+                        0,
+                        intent,
+                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+                );
+
+                // Schedule the alarm
+                AlarmManager alarmManager = (AlarmManager) requireContext().getSystemService(Context.ALARM_SERVICE);
+                if (alarmManager != null) {
+                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error setting notification for due date", e);
+        }
     }
 
     private void showDatePicker(EditText editText) {
