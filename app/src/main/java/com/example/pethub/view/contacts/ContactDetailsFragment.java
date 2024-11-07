@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.provider.ContactsContract;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,10 @@ public class ContactDetailsFragment extends Fragment {
                     startActivity(intent);
                 }
             });
+
+            binding.textViewContact.setText(Html.fromHtml("<u>"+contact+ "</u>"));
+
+            binding.textViewAddress.setText(Html.fromHtml("<u>"+ address +"</u>"));
 
             // Make the address clickable
             binding.textViewAddress.setOnClickListener(v -> {

@@ -220,7 +220,6 @@
                                 android:fontFamily="@font/roboto_medium"
                                 android:foreground="?attr/selectableItemBackground"
                                 android:text="09541885470"
-                                android:drawableStart="@drawable/baseline_phone"
                                 android:textColor="#03A9F4"
                                 android:textSize="@dimen/dimen_16sp"
                                 android:autoLink="phone"/>
@@ -247,8 +246,6 @@
                                 android:id="@+id/textViewAddress"
                                 android:layout_width="147dp"
                                 android:layout_height="38dp"
-                                android:autoLink="all"
-                                android:drawableStart="@drawable/baseline_location_"
                                 android:ellipsize="end"
                                 android:focusable="true"
                                 android:fontFamily="@font/roboto_medium"
@@ -257,7 +254,8 @@
                                 android:text="Daet, Camarines Norte"
                                 android:textAlignment="textEnd"
                                 android:textColor="#03A9F4"
-                                android:textSize="@dimen/dimen_16sp" />
+                                android:textSize="@dimen/dimen_16sp"
+                                />
 
 
                         </LinearLayout>
